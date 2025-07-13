@@ -1,0 +1,26 @@
+[
+  {
+    "id": 2,
+    "title": "Parent-Teacher Meeting",
+    "description": "Meet with teachers to discuss student progress and academic performance.",
+    "event_date": "2024-03-15",
+    "event_time": "14:00:00",
+    "location": "School Hall",
+    "image_url": null,
+    "category": "Parent Meeting",
+    "is_featured": false,
+    "created_at": "2024-02-01 04:30:00"
+  },
+  {
+    "id": 5,
+    "title": "Test Event",
+    "description": "Test Description",
+    "event_date": "2025-08-01",
+    "event_time": "10:00:00",
+    "location": "School",
+    "image_url": null,
+    "category": "Academic",
+    "is_featured": true,
+    "created_at": "2025-07-06 08:32:32"
+  }
+]

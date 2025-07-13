@@ -1,0 +1,2249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - Makalanegama School</title>
+    <meta name="description" content="Celebrate the outstanding achievements of Makalanegama School students in academics, sports, cultural activities, and community service.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Achievements - Makalanegama School">
+    <meta property="og:description" content="Outstanding achievements in academics, sports, and cultural activities by our students">
+    <meta property="og:image" content="assets/images/achievements/achievements-hero.jpg">
+    <meta property="og:url" content="https://makalanegamaschool.lk/achievements.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Sinhala:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        /* Custom CSS Variables */
+        :root {
+            --maroon-primary: #800020;
+            --maroon-dark: #5d0017;
+            --maroon-light: #a6334f;
+            --gold-accent: #ffd700;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --dark-gray: #334155;
+            --black: #1a1a1a;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --info: #3b82f6;
+            --cream-background: #faf7f0;
+            --deep-blue: #1e3a8a;
+            
+            --font-primary: 'Inter', 'Noto Sans Sinhala', sans-serif;
+            --font-sinhala: 'Noto Sans Sinhala', sans-serif;
+            
+            --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-heavy: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            
+            --radius-small: 8px;
+            --radius-medium: 12px;
+            --radius-large: 20px;
+            
+            --transition-fast: 0.2s ease-out;
+            --transition-medium: 0.3s ease-out;
+            --transition-slow: 0.5s ease-out;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+
+        /* Navigation */
+        .custom-navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(128, 0, 32, 0.1);
+            padding: 1rem 0;
+            transition: var(--transition-medium);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .navbar-brand .logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        .school-name .primary-name {
+            display: block;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--maroon-primary);
+            line-height: 1.2;
+        }
+
+        .school-name .secondary-name {
+            display: block;
+            font-family: var(--font-sinhala);
+            font-size: 0.875rem;
+            color: var(--medium-gray);
+            line-height: 1.2;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: var(--dark-gray);
+            padding: 0.5rem 1rem;
+            position: relative;
+            transition: var(--transition-fast);
+        }
+
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link:hover {
+            color: var(--maroon-primary);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--maroon-primary) 0%, var(--maroon-dark) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 0 4rem;
+            margin-top: 76px; /* Account for fixed navbar */
+        }
+
+        .header-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .header-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="trophy-pattern" patternUnits="userSpaceOnUse" width="40" height="40"><path d="M20 10 C15 15, 15 25, 20 30 C25 25, 25 15, 20 10 Z" fill="rgba(255,215,0,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23trophy-pattern)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .breadcrumb {
+            background: none;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb-item a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: var(--gold-accent);
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle-sinhala {
+            font-family: var(--font-sinhala);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .page-description {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .page-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold-accent);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-item .stat-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .header-visual img {
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .visual-overlay {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--radius-medium);
+            box-shadow: var(--shadow-medium);
+            text-align: center;
+        }
+
+        .overlay-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--maroon-primary);
+            font-weight: 600;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background: var(--light-gray);
+            border-bottom: 1px solid rgba(128, 0, 32, 0.1);
+            padding: 2rem 0;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-btn {
+            background: var(--white);
+            border: 2px solid var(--light-gray);
+            color: var(--medium-gray);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-medium);
+            font-weight: 500;
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--maroon-primary);
+            color: var(--maroon-primary);
+            background: var(--cream-background);
+            text-decoration: none;
+        }
+
+        .filter-btn.active {
+            background: var(--maroon-primary);
+            border-color: var(--maroon-primary);
+            color: var(--white);
+        }
+
+        .search-box {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .search-box .form-control {
+            border: 2px solid var(--light-gray);
+            border-radius: var(--radius-medium) 0 0 var(--radius-medium);
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+        }
+
+        .search-box .btn {
+            border-radius: 0 var(--radius-medium) var(--radius-medium) 0;
+            border: 2px solid var(--maroon-primary);
+            border-left: none;
+            background: var(--maroon-primary);
+            color: var(--white);
+            padding: 0.75rem 1.25rem;
+        }
+
+        .search-box .btn:hover {
+            background: var(--maroon-dark);
+            border-color: var(--maroon-dark);
+        }
+
+        /* Featured Achievements Section */
+        .featured-achievements {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--cream-background);
+            color: var(--maroon-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .section-description {
+            font-size: 1.125rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .featured-achievement-card {
+            background: var(--white);
+            border-radius: var(--radius-large);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-medium);
+            height: 100%;
+            cursor: pointer;
+            border: 3px solid var(--gold-accent);
+            position: relative;
+        }
+
+        .featured-achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .featured-achievement-card::before {
+            content: "FEATURED";
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gold-accent);
+            color: var(--black);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-small);
+            font-size: 0.75rem;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .featured-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+
+        .featured-achievement-card:hover .featured-image img {
+            transform: scale(1.05);
+        }
+
+        .featured-content {
+            padding: 2rem;
+        }
+
+        .featured-category {
+            color: var(--gold-accent);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .featured-content h3 {
+            color: var(--black);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            font-size: 1.375rem;
+        }
+
+        .featured-content p {
+            color: var(--medium-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .featured-date {
+            color: var(--medium-gray);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--light-gray);
+            padding-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Achievement Grid Section */
+        .achievements-grid-section {
+            padding: 4rem 0;
+            background: var(--light-gray);
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .achievement-card {
+            background: var(--white);
+            border-radius: var(--radius-large);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-medium);
+            height: 100%;
+            cursor: pointer;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            opacity: 1 !important; /* Override AOS opacity */
+            visibility: visible !important; /* Ensure always visible */
+        }
+
+        /* Ensure achievement cards are visible even with AOS */
+        .achievement-card[data-aos] {
+            opacity: 1 !important;
+        }
+
+        /* Animation completed state */
+        .achievement-card.aos-animate {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .achievement-image {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .achievement-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+
+        .achievement-image .no-image {
+            color: #6c757d;
+            font-size: 3rem;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background: #f8f9fa;
+        }
+
+        .achievement-card:hover .achievement-image img {
+            transform: scale(1.05);
+        }
+
+        .achievement-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--white);
+            background: var(--maroon-primary);
+        }
+
+        .achievement-category.academic { background: var(--success); }
+        .achievement-category.sports { background: var(--info); }
+        .achievement-category.cultural { background: var(--warning); }
+        .achievement-category.environmental { background: var(--success); }
+        .achievement-category.technology { background: var(--deep-blue); }
+        .achievement-category.arts { background: #e91e63; }
+        .achievement-category.science { background: #009688; }
+
+        .achievement-content {
+            padding: 1.5rem;
+        }
+
+        .achievement-date {
+            color: var(--medium-gray);
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .achievement-content h4 {
+            color: var(--black);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            font-size: 1.25rem;
+        }
+
+        .achievement-content p {
+            color: var(--medium-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .achievement-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-medium);
+            transition: var(--transition-medium);
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-size: 0.875rem;
+        }
+
+        .btn-maroon {
+            background: var(--maroon-primary);
+            color: var(--white);
+        }
+
+        .btn-maroon:hover {
+            background: var(--maroon-dark);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-maroon {
+            border: 2px solid var(--maroon-primary);
+            color: var(--maroon-primary);
+            background: transparent;
+        }
+
+        .btn-outline-maroon:hover {
+            background: var(--maroon-primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-sm {
+            padding: 0.375rem 0.75rem;
+            font-size: 0.8rem;
+        }
+
+        /* Loading and Error States */
+        .loading-indicator {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .spinner-border.text-maroon {
+            color: var(--maroon-primary) !important;
+        }
+
+        .no-achievements {
+            background: var(--white);
+            border-radius: var(--radius-large);
+            padding: 4rem 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+        }
+
+        .no-achievements i {
+            font-size: 4rem;
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+
+        .api-error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: var(--radius-medium);
+            margin: 1rem 0;
+        }
+
+        /* Load More Button */
+        .load-more-section {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* CTA Section */
+        .achievement-cta {
+            background: linear-gradient(135deg, var(--maroon-primary) 0%, var(--maroon-dark) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 0;
+        }
+
+        .achievement-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="trophy-pattern" patternUnits="userSpaceOnUse" width="40" height="40"><path d="M20 10 C15 15, 15 25, 20 30 C25 25, 25 15, 20 10 Z" fill="rgba(255,215,0,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23trophy-pattern)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.125rem;
+            margin: 0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+            margin-top: 2rem;
+        }
+
+        .btn-light {
+            background: var(--white);
+            color: var(--maroon-primary);
+            padding: 0.875rem 2rem;
+        }
+
+        .btn-light:hover {
+            background: var(--cream-background);
+            color: var(--maroon-dark);
+        }
+
+        .btn-outline-light {
+            border: 2px solid var(--white);
+            color: var(--white);
+            background: transparent;
+            padding: 0.875rem 2rem;
+        }
+
+        .btn-outline-light:hover {
+            background: var(--white);
+            color: var(--maroon-primary);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--maroon-primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-medium);
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--maroon-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 6rem 0 3rem;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .achievements-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .filter-tabs {
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+            
+            .search-box {
+                max-width: none;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            
+            .page-stats {
+                gap: 2rem;
+                justify-content: center;
+            }
+            
+            .stat-item .stat-number {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .visual-overlay {
+                position: static;
+                margin-top: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .achievement-content {
+                padding: 1.25rem;
+            }
+            
+            .featured-content {
+                padding: 1.5rem;
+            }
+            
+            .achievement-actions {
+                flex-direction: column;
+            }
+            
+            .achievement-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo/logo.png" alt="Makalanegama School" class="logo">
+                <span class="school-name">
+                    <span class="primary-name">Makalanegama School</span>
+                    <span class="secondary-name">මාකලනේගම විද්‍යාලය</span>
+                </span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                            <li><a class="dropdown-item" href="curriculum.html">Curriculum</a></li>
+                            <li><a class="dropdown-item" href="student-life.html">Student Life</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teachers.html">Teachers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="achievements.html">Achievements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admissions.html">Admissions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="header-background">
+            <div class="header-overlay"></div>
+            <div class="header-pattern"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="header-content">
+                        <nav aria-label="breadcrumb" data-aos="fade-up">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active">Achievements</li>
+                            </ol>
+                        </nav>
+                        
+                        <h1 class="page-title" data-aos="fade-up" data-aos-delay="200">
+                            Our <span style="color: var(--gold-accent);">Achievements</span>
+                        </h1>
+                        
+                        <h2 class="page-subtitle-sinhala" data-aos="fade-up" data-aos-delay="300">
+                            අපගේ ජයග්‍රහණ
+                        </h2>
+                        
+                        <p class="page-description" data-aos="fade-up" data-aos-delay="400">
+                            Celebrating the outstanding accomplishments of our students and school community 
+                            in academics, sports, cultural activities, and community service initiatives.
+                        </p>
+                        
+                        <div class="page-stats" data-aos="fade-up" data-aos-delay="500">
+                            <div class="stat-item">
+                                <div class="stat-number" id="total-achievements">0</div>
+                                <div class="stat-label">Total Achievements</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="featured-count">0</div>
+                                <div class="stat-label">Featured</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="categories-count">0</div>
+                                <div class="stat-label">Categories</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-left" data-aos-delay="600">
+                    <div class="header-visual">
+                        <img src="assets/images/achievements/achievements-hero.jpg" alt="Student Achievements" class="img-fluid rounded">
+                        <div class="visual-overlay">
+                            <div class="overlay-badge">
+                                <i class="fas fa-trophy"></i>
+                                <span>Excellence Recognized</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Indicator -->
+    <div id="loading-indicator" class="loading-indicator" style="display: none;">
+        <div class="spinner-border text-maroon" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-3">Loading achievements from database...</p>
+    </div>
+
+    <!-- API Error Display -->
+    <div id="api-error" class="container" style="display: none;">
+        <div class="api-error">
+            <h5><i class="fas fa-exclamation-triangle"></i> Unable to Load Achievements</h5>
+            <p id="error-message">There was an error connecting to the database. Please try refreshing the page.</p>
+            <button onclick="window.location.reload()" class="btn btn-maroon btn-sm">
+                <i class="fas fa-refresh"></i> Refresh Page
+            </button>
+        </div>
+    </div>
+
+    <!-- Achievement Categories Filter -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="filter-tabs" data-aos="fade-up">
+                        <button class="filter-btn active" data-filter="all">
+                            <i class="fas fa-trophy"></i>
+                            All Achievements
+                        </button>
+                        <button class="filter-btn" data-filter="Academic">
+                            <i class="fas fa-graduation-cap"></i>
+                            Academic
+                        </button>
+                        <button class="filter-btn" data-filter="Sports">
+                            <i class="fas fa-running"></i>
+                            Sports
+                        </button>
+                        <button class="filter-btn" data-filter="Cultural">
+                            <i class="fas fa-theater-masks"></i>
+                            Cultural
+                        </button>
+                        <button class="filter-btn" data-filter="Environmental">
+                            <i class="fas fa-leaf"></i>
+                            Environmental
+                        </button>
+                        <button class="filter-btn" data-filter="Technology">
+                            <i class="fas fa-laptop-code"></i>
+                            Technology
+                        </button>
+                        <button class="filter-btn" data-filter="Arts">
+                            <i class="fas fa-palette"></i>
+                            Arts
+                        </button>
+                        <button class="filter-btn" data-filter="Science">
+                            <i class="fas fa-flask"></i>
+                            Science
+                        </button>
+                    </div>
+                    
+                    <div class="search-box" data-aos="fade-up" data-aos-delay="200">
+                        <div class="input-group">
+                            <input type="text" id="achievement-search" class="form-control" placeholder="Search achievements...">
+                            <button class="btn btn-maroon" type="button" id="search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Achievements -->
+    <section class="featured-achievements" id="featured-section" style="display: none;">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">
+                    Featured Achievements
+                </div>
+                <h2 class="section-title">
+                    Our Most <span style="color: var(--maroon-primary);">Celebrated</span> Accomplishments
+                </h2>
+                <p class="section-description">
+                    Highlighting our most significant achievements that bring pride to our school community
+                </p>
+            </div>
+            
+            <div class="row g-4" id="featured-achievements">
+                <!-- Featured achievements will be loaded here from database -->
+            </div>
+        </div>
+    </section>
+
+    <!-- All Achievements Grid -->
+    <section class="achievements-grid-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">
+                    All Achievements
+                </div>
+                <h2 class="section-title">
+                    Our Complete <span style="color: var(--maroon-primary);">Achievement</span> Gallery
+                </h2>
+                <p class="section-description">
+                    Browse through our comprehensive collection of student and school achievements
+                </p>
+            </div>
+            
+            <!-- No Achievements Message -->
+            <div id="no-achievements" class="no-achievements" style="display: none;">
+                <i class="fas fa-trophy"></i>
+                <h4>No Achievements Found</h4>
+                <p>There are currently no achievements in the database matching your criteria.</p>
+                <p>Check back later or contact the school administration.</p>
+            </div>
+            
+            <div class="achievements-grid" id="achievements-grid">
+                <!-- Achievement 1: Charuka Breaks Barriers in IT! -->
+                <div class="achievement-card h-100" data-category="technology" data-aos="fade-up">
+                    <div class="achievement-image">
+                        <img src="assets/uploads/2025/07/686a109d1c4a9.jpg" alt="Charuka Breaks Barriers in IT!" class="img-fluid">
+                        <div class="achievement-category technology">
+                            Technology
+                        </div>
+                        <div class="featured-badge"><i class="fas fa-star"></i></div>
+                    </div>
+                    <div class="achievement-content">
+                        <div class="achievement-date">
+                            <i class="fas fa-calendar"></i>
+                            July 6, 2025
+                        </div>
+                        <h4>Charuka Breaks Barriers in IT!</h4>
+                        <p>Making History Together! Today, Charuka from Makalanegama Vidyalaya etched his name in history as the first student from our school to participate in the IT competition organized by the Mahava Zone! His passion, perseverance, and pursuit of excellence are a true inspiration.</p>
+                        <div class="achievement-actions">
+                            <button class="btn btn-maroon btn-sm" onclick="viewAchievement(5)">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement 2: Charuka Shines in Zonal IT Competition! -->
+                <div class="achievement-card h-100" data-category="technology" data-aos="fade-up">
+                    <div class="achievement-image">
+                        <img src="assets/uploads/2025/07/686a111a6bb98.jpg" alt="Charuka Shines in Zonal IT Competition!" class="img-fluid">
+                        <div class="achievement-category technology">
+                            Technology
+                        </div>
+                        <div class="featured-badge"><i class="fas fa-star"></i></div>
+                    </div>
+                    <div class="achievement-content">
+                        <div class="achievement-date">
+                            <i class="fas fa-calendar"></i>
+                            July 6, 2025
+                        </div>
+                        <h4>Charuka Shines in Zonal IT Competition!</h4>
+                        <p>Congratulations to Charuka Umesh for his remarkable achievement! Yesterday, he proudly secured 3rd place in the Mahava Zonal IT Competition, a true testament to his incredible talent and passion for technology.</p>
+                        <div class="achievement-actions">
+                            <button class="btn btn-maroon btn-sm" onclick="viewAchievement(6)">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement 3: Marching Toward Greatness – NCC Pride! -->
+                <div class="achievement-card h-100" data-category="sports" data-aos="fade-up">
+                    <div class="achievement-image">
+                        <img src="assets/uploads/2025/07/686a11b2d8a48.jpg" alt="Marching Toward Greatness – NCC Pride!" class="img-fluid">
+                        <div class="achievement-category sports">
+                            Sports
+                        </div>
+                        <div class="featured-badge"><i class="fas fa-star"></i></div>
+                    </div>
+                    <div class="achievement-content">
+                        <div class="achievement-date">
+                            <i class="fas fa-calendar"></i>
+                            July 6, 2025
+                        </div>
+                        <h4>Marching Toward Greatness – NCC Pride!</h4>
+                        <p>We are proud to celebrate the outstanding achievement of two dedicated students who have successfully completed the Junior Leadership Training Camp under the National Cadet Corps (NCC)!</p>
+                        <div class="achievement-actions">
+                            <button class="btn btn-maroon btn-sm" onclick="viewAchievement(7)">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement 4: Celebrating Our Sports Champions! -->
+                <div class="achievement-card h-100" data-category="sports" data-aos="fade-up">
+                    <div class="achievement-image">
+                        <img src="assets/uploads/2025/07/686a1271b9f1e.jpg" alt="Celebrating Our Sports Champions!" class="img-fluid">
+                        <div class="achievement-category sports">
+                            Sports
+                        </div>
+                        <div class="featured-badge"><i class="fas fa-star"></i></div>
+                    </div>
+                    <div class="achievement-content">
+                        <div class="achievement-date">
+                            <i class="fas fa-calendar"></i>
+                            July 6, 2025
+                        </div>
+                        <h4>Celebrating Our Sports Champions!</h4>
+                        <p>Warmest congratulations to the talented students of our school who achieved remarkable victories at the 2023 Athletics Meet! Your dedication, discipline, and determination have made us all proud.</p>
+                        <div class="achievement-actions">
+                            <button class="btn btn-maroon btn-sm" onclick="viewAchievement(8)">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement 5: Future Tech Leaders in Action! -->
+                <div class="achievement-card h-100" data-category="technology" data-aos="fade-up">
+                    <div class="achievement-image">
+                        <img src="assets/uploads/2025/07/686a12edada97.jpg" alt="Future Tech Leaders in Action!" class="img-fluid">
+                        <div class="achievement-category technology">
+                            Technology
+                        </div>
+                        <div class="featured-badge"><i class="fas fa-star"></i></div>
+                    </div>
+                    <div class="achievement-content">
+                        <div class="achievement-date">
+                            <i class="fas fa-calendar"></i>
+                            July 6, 2025
+                        </div>
+                        <h4>Future Tech Leaders in Action!</h4>
+                        <p>Best of luck to our brilliant students from Destiny Lab as they step into the final round of the Young Computer Scientist Competition organized by the Ministry of Education!</p>
+                        <div class="achievement-actions">
+                            <button class="btn btn-maroon btn-sm" onclick="viewAchievement(9)">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement 6: From Learners to Leaders in Tech! -->
+                <div class="achievement-card h-100" data-category="technology" data-aos="fade-up">
+                    <div class="achievement-image">
+                        <img src="assets/uploads/2025/07/686a133035119.jpg" alt="From Learners to Leaders in Tech!" class="img-fluid">
+                        <div class="achievement-category technology">
+                            Technology
+                        </div>
+                        <div class="featured-badge"><i class="fas fa-star"></i></div>
+                    </div>
+                    <div class="achievement-content">
+                        <div class="achievement-date">
+                            <i class="fas fa-calendar"></i>
+                            July 6, 2025
+                        </div>
+                        <h4>From Learners to Leaders in Tech!</h4>
+                        <p>From computer beginners to IT competition champions — the transformation at Makalanegama Vidyalaya has been nothing short of inspiring. We are truly proud to have provided an IT lab and digital education to these bright young minds.</p>
+                        <div class="achievement-actions">
+                            <button class="btn btn-maroon btn-sm" onclick="viewAchievement(10)">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement 7: Champion of Innovation – Charuka Leads the Way! -->
+                <div class="achievement-card h-100" data-category="technology" data-aos="fade-up">
+                    <div class="achievement-image">
+                        <img src="assets/uploads/2025/07/686a137828c04.jpg" alt="Champion of Innovation – Charuka Leads the Way!" class="img-fluid">
+                        <div class="achievement-category technology">
+                            Technology
+                        </div>
+                        <div class="featured-badge"><i class="fas fa-star"></i></div>
+                    </div>
+                    <div class="achievement-content">
+                        <div class="achievement-date">
+                            <i class="fas fa-calendar"></i>
+                            July 6, 2025
+                        </div>
+                        <h4>Champion of Innovation – Charuka Leads the Way!</h4>
+                        <p>Congratulations to Charuka, the 1st Place Winner of the North Western Provincial Robotics and Invention Competition! Your creativity, determination, and passion for technology have earned you this incredible achievement.</p>
+                        <div class="achievement-actions">
+                            <button class="btn btn-maroon btn-sm" onclick="viewAchievement(11)">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="load-more-section" data-aos="fade-up">
+                <button id="load-more-achievements" class="btn btn-maroon btn-lg" style="display: none;">
+                    <i class="fas fa-plus"></i>
+                    Load More Achievements
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="achievement-cta">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8" data-aos="fade-right">
+                    <div class="cta-content">
+                        <h2>Ready to Join Our Success Story?</h2>
+                        <p>Be part of a school where every student has the opportunity to excel and achieve their dreams. 
+                           Join our community of achievers and create your own success story.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+                    <div class="cta-buttons">
+                        <a href="admissions.html" class="btn btn-light btn-lg">
+                            <i class="fas fa-user-plus"></i>
+                            Apply for Admission
+                        </a>
+                        <a href="contact.html" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-phone"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievement Modal -->
+    <div class="modal fade" id="achievementModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="achievementModalLabel">Achievement Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="achievementModalBody">
+                    <!-- Achievement details will be loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-maroon" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-maroon" id="shareAchievementBtn">
+                        <i class="fas fa-share"></i> Share Achievement
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Achievements JavaScript -->
+    <script>
+        /**
+         * Achievements Manager - COMPLETE FIXED VERSION
+         */
+        class AchievementsManager {
+            constructor() {
+                this.achievements = [];
+                this.filteredAchievements = [];
+                this.currentFilter = 'all';
+                this.currentPage = 1;
+                this.achievementsPerPage = 9;
+                this.isLoading = false;
+                this.searchTerm = '';
+                this.debugInfo = [];
+                
+                this.initializeElements();
+                this.bindEvents();
+                console.log('AchievementsManager initialized - COMPLETE FIXED VERSION');
+                this.init();
+            }
+
+            /**
+             * Initialize DOM elements
+             */
+            initializeElements() {
+                this.achievementsGrid = document.getElementById('achievements-grid');
+                this.featuredSection = document.getElementById('featured-section');
+                this.featuredContainer = document.getElementById('featured-achievements');
+                this.loadMoreBtn = document.getElementById('load-more-achievements');
+                this.loadingIndicator = document.getElementById('loading-indicator');
+                this.noAchievementsDiv = document.getElementById('no-achievements');
+                this.apiErrorDiv = document.getElementById('api-error');
+                this.errorMessageEl = document.getElementById('error-message');
+                this.searchInput = document.getElementById('achievement-search');
+                this.filterButtons = document.querySelectorAll('.filter-btn');
+                
+                // Stats elements
+                this.totalAchievementsEl = document.getElementById('total-achievements');
+                this.featuredCountEl = document.getElementById('featured-count');
+                this.categoriesCountEl = document.getElementById('categories-count');
+                
+                console.log('Elements initialized:', {
+                    grid: !!this.achievementsGrid,
+                    featured: !!this.featuredContainer,
+                    buttons: this.filterButtons.length
+                });
+            }
+
+            /**
+             * Bind event listeners
+             */
+            bindEvents() {
+                // Filter buttons
+                this.filterButtons.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        this.handleFilterChange(btn.getAttribute('data-filter'));
+                    });
+                });
+
+                // Search functionality
+                if (this.searchInput) {
+                    this.searchInput.addEventListener('input', this.debounce((e) => {
+                        this.handleSearch(e.target.value);
+                    }, 300));
+                }
+
+                // Load more button
+                if (this.loadMoreBtn) {
+                    this.loadMoreBtn.addEventListener('click', () => {
+                        this.loadMoreAchievements();
+                    });
+                }
+
+                // Search button
+                const searchBtn = document.getElementById('search-btn');
+                if (searchBtn) {
+                    searchBtn.addEventListener('click', () => {
+                        this.handleSearch(this.searchInput.value);
+                    });
+                }
+
+                // Back to top button
+                const backToTopBtn = document.getElementById('backToTop');
+                if (backToTopBtn) {
+                    window.addEventListener('scroll', () => {
+                        const scrolled = window.scrollY > 500;
+                        backToTopBtn.classList.toggle('visible', scrolled);
+                    });
+                    
+                    backToTopBtn.addEventListener('click', () => {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+                }
+            }
+
+            /**
+             * Initialize the achievements manager
+             */
+            async init() {
+                console.log('Loading achievements from database...');
+                await this.loadAchievements();
+                this.updateStatistics();
+                this.applyFilters(); // Apply initial filters before displaying
+                this.displayAchievements();
+                this.displayFeaturedAchievements();
+            }
+
+            /**
+             * Test multiple API paths to find the working one
+             */
+            async testApiPaths() {
+                const currentUrl = window.location.href;
+                const baseUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/'));
+                
+                // Multiple possible API paths to test
+                const apiPaths = [
+                    'api/achievements.php',
+                    './api/achievements.php',
+                    '/api/achievements.php',
+                    '../api/achievements.php',
+                    baseUrl + '/api/achievements.php'
+                ];
+
+                this.debugInfo.push('Testing API paths...');
+                this.debugInfo.push('Current URL: ' + currentUrl);
+                this.debugInfo.push('Base URL: ' + baseUrl);
+
+                for (const path of apiPaths) {
+                    try {
+                        this.debugInfo.push(`Testing: ${path}`);
+                        console.log(`Testing API path: ${path}`);
+                        
+                        const response = await fetch(path + '?limit=100');
+                        console.log(`Response status for ${path}:`, response.status);
+                        
+                        if (response.ok) {
+                            const data = await response.json();
+                            
+                            if (data.error) {
+                                this.debugInfo.push(`${path} - API Error: ${data.error}`);
+                                continue;
+                            }
+                            
+                            if (Array.isArray(data)) {
+                                this.debugInfo.push(`${path} - SUCCESS! Found ${data.length} achievements`);
+                                console.log(`SUCCESS: Working API path found: ${path}`);
+                                return { success: true, data: data, path: path };
+                            } else {
+                                this.debugInfo.push(`${path} - Invalid data format`);
+                            }
+                        } else {
+                            this.debugInfo.push(`${path} - HTTP ${response.status}: ${response.statusText}`);
+                        }
+                        
+                    } catch (error) {
+                        this.debugInfo.push(`${path} - Error: ${error.message}`);
+                        console.log(`Error testing ${path}:`, error.message);
+                    }
+                }
+                
+                return { success: false, data: [], path: null };
+            }
+
+            /**
+             * Load achievements from database API
+             */
+            async loadAchievements() {
+                try {
+                    this.showLoading(true);
+                    this.hideError();
+                    
+                    console.log('Loading achievements from static JSON file...');
+                    
+                    // Load achievements from JSON file
+                    const response = await fetch('data/achievements.json');
+                    if (response.ok) {
+                        this.achievements = await response.json();
+                        this.filteredAchievements = [...this.achievements];
+                        console.log('✅ SUCCESS: Loaded real achievements from JSON:', this.achievements.length);
+                        console.log('Real database achievements:', this.achievements);
+                        this.hideNoAchievements();
+                    } else {
+                        console.error('❌ FAILED: Could not load achievements from JSON file');
+                        this.showError('Failed to load achievements from database. Please refresh the page.');
+                        this.achievements = [];
+                        this.filteredAchievements = [];
+                    }
+                    
+                } catch (error) {
+                    console.error('❌ ERROR loading achievements:', error);
+                    this.showError('Error loading achievements: ' + error.message);
+                    this.achievements = [];
+                    this.filteredAchievements = [];
+                } finally {
+                    this.showLoading(false);
+                }
+            }
+
+            /**
+             * No fallback data - only use real database achievements
+             */
+            getFallbackData() {
+                console.warn('⚠️ getFallbackData() called - This should not happen. Using empty array.');
+                return [];
+            }
+
+            /**
+             * Handle filter changes
+             */
+            handleFilterChange(filter) {
+                this.currentFilter = filter;
+                this.currentPage = 1;
+                
+                // Update active filter button
+                this.filterButtons.forEach(btn => btn.classList.remove('active'));
+                const activeBtn = document.querySelector(`[data-filter="${filter}"]`);
+                if (activeBtn) {
+                    activeBtn.classList.add('active');
+                }
+                
+                this.applyFilters();
+                this.displayAchievements();
+                this.animateFilterChange();
+            }
+
+            /**
+             * Handle search functionality
+             */
+            handleSearch(searchTerm) {
+                this.searchTerm = searchTerm.toLowerCase().trim();
+                this.currentPage = 1;
+                this.applyFilters();
+                this.displayAchievements();
+            }
+
+            /**
+             * Apply current filters and search
+             */
+            applyFilters() {
+                this.filteredAchievements = this.achievements.filter(achievement => {
+                    const matchesFilter = this.currentFilter === 'all' || achievement.category === this.currentFilter;
+                    const matchesSearch = !this.searchTerm || 
+                        achievement.title.toLowerCase().includes(this.searchTerm) ||
+                        achievement.description.toLowerCase().includes(this.searchTerm) ||
+                        achievement.category.toLowerCase().includes(this.searchTerm);
+                    
+                    return matchesFilter && matchesSearch;
+                });
+                console.log('✅ Applied filters:', this.filteredAchievements.length, 'achievements match criteria');
+            }
+
+            /**
+             * Display achievements in grid
+             */
+            displayAchievements() {
+                console.log('🔍 displayAchievements() called');
+                console.log('📊 this.achievements.length:', this.achievements.length);
+                console.log('📊 this.filteredAchievements.length:', this.filteredAchievements.length);
+                console.log('📊 this.currentPage:', this.currentPage);
+                console.log('📊 this.achievementsPerPage:', this.achievementsPerPage);
+                
+                if (!this.achievementsGrid) {
+                    console.error('❌ Achievements grid not found');
+                    return;
+                }
+
+                // If filteredAchievements is empty but we have achievements, use all achievements
+                if (this.filteredAchievements.length === 0 && this.achievements.length > 0) {
+                    console.log('⚠️ filteredAchievements is empty, using all achievements');
+                    this.filteredAchievements = [...this.achievements];
+                }
+                
+                const startIndex = 0;
+                const endIndex = this.currentPage * this.achievementsPerPage;
+                const achievementsToShow = this.filteredAchievements.slice(startIndex, endIndex);
+
+                console.log('📈 Displaying achievements:', achievementsToShow.length, 'of', this.filteredAchievements.length);
+                console.log('📋 Achievement data sample:', achievementsToShow[0]);
+
+                if (achievementsToShow.length === 0) {
+                    if (this.achievements.length === 0) {
+                        this.showNoAchievements('No achievements found in the database. Please check back later.');
+                    } else {
+                        this.showNoAchievements('No achievements match your search criteria. Try adjusting your filters.');
+                    }
+                    this.achievementsGrid.innerHTML = '';
+                    this.updateLoadMoreButton();
+                    return;
+                }
+
+                this.hideNoAchievements();
+                this.achievementsGrid.innerHTML = '';
+
+                achievementsToShow.forEach((achievement, index) => {
+                    const achievementCard = this.createAchievementCard(achievement, index);
+                    
+                    // Force immediate visibility before adding to DOM
+                    achievementCard.style.opacity = '1';
+                    achievementCard.style.visibility = 'visible';
+                    achievementCard.style.transform = 'none';
+                    
+                    this.achievementsGrid.appendChild(achievementCard);
+                    console.log('✅ Added card for:', achievement.title);
+                });
+                
+                console.log('✅ Grid now contains', this.achievementsGrid.children.length, 'cards');
+
+                this.updateLoadMoreButton();
+                
+                // Force a reflow to ensure grid is visible
+                this.achievementsGrid.style.display = 'grid';
+                this.achievementsGrid.style.visibility = 'visible';
+                this.achievementsGrid.style.opacity = '1';
+                
+                // Ensure parent section is visible too
+                const gridSection = document.querySelector('.achievements-grid-section');
+                if (gridSection) {
+                    gridSection.style.display = 'block';
+                }
+                
+                console.log('✅ All Achievements Grid configured with', achievementsToShow.length, 'cards');
+                
+                // Refresh AOS to animate new elements and ensure visibility
+                setTimeout(() => {
+                    // Refresh AOS for new elements
+                    if (typeof AOS !== 'undefined') {
+                        AOS.refresh();
+                    }
+                    
+                    // Fallback: ensure cards are visible if AOS fails
+                    const cards = this.achievementsGrid.querySelectorAll('.achievement-card');
+                    cards.forEach(card => {
+                        // Force visibility if AOS hasn't animated the card
+                        if (card.style.opacity === '0') {
+                            card.style.opacity = '1';
+                            card.style.transform = 'none';
+                        }
+                    });
+                    
+                    this.animateCards();
+                }, 200);
+            }
+
+            /**
+             * Display featured achievements
+             */
+            displayFeaturedAchievements() {
+                if (!this.featuredContainer) {
+                    console.error('Featured container not found');
+                    return;
+                }
+
+                const featuredAchievements = this.achievements.filter(a => a.is_featured || a.featured).slice(0, 3);
+                
+                console.log('Featured achievements found:', featuredAchievements.length);
+                console.log('Featured achievements data:', featuredAchievements);
+
+                if (featuredAchievements.length === 0) {
+                    if (this.featuredSection) {
+                        this.featuredSection.style.display = 'none';
+                    }
+                    return;
+                }
+
+                if (this.featuredSection) {
+                    this.featuredSection.style.display = 'block';
+                }
+                this.featuredContainer.innerHTML = '';
+
+                featuredAchievements.forEach((achievement, index) => {
+                    const featuredCard = this.createFeaturedCard(achievement, index);
+                    this.featuredContainer.appendChild(featuredCard);
+                    console.log('Added featured card for:', achievement.title);
+                });
+            }
+
+            /**
+             * Create achievement card element
+             */
+            createAchievementCard(achievement, index) {
+                const card = document.createElement('div');
+                card.className = 'achievement-card';
+                card.setAttribute('data-aos', 'fade-up');
+                card.setAttribute('data-aos-delay', (index * 100).toString());
+
+                const formattedDate = this.formatDate(achievement.created_at);
+                const isFeatured = achievement.is_featured || achievement.featured;
+                
+                // Handle image - show placeholder if no image or if image fails to load
+                const imageHtml = achievement.image_url ? 
+                    `<img src="${achievement.image_url}" alt="${achievement.title}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                     <div class="no-image" style="display: none;"><i class="fas fa-trophy"></i></div>` :
+                    `<div class="no-image"><i class="fas fa-trophy"></i></div>`;
+
+                card.innerHTML = `
+                    <div class="achievement-image">
+                        ${imageHtml}
+                        <div class="achievement-category ${achievement.category.toLowerCase()}">${achievement.category}</div>
+                    </div>
+                    <div class="achievement-content">
+                        <div class="achievement-date"><i class="fas fa-calendar"></i> ${formattedDate}</div>
+                        <h4>${achievement.title}</h4>
+                        <p>${this.truncateText(achievement.description, 120)}</p>
+                        <div class="achievement-actions">
+                            <button class="btn btn-maroon btn-sm" onclick="window.achievementsManager.showAchievementModal(${achievement.id})">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                            <button class="btn btn-outline-maroon btn-sm" onclick="window.achievementsManager.shareAchievement(${achievement.id})">
+                                <i class="fas fa-share"></i> Share
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                card.addEventListener('click', (e) => {
+                    if (!e.target.closest('button')) {
+                        this.showAchievementModal(achievement.id);
+                    }
+                });
+
+                return card;
+            }
+
+            /**
+             * Create featured achievement card
+             */
+            createFeaturedCard(achievement, index) {
+                const card = document.createElement('div');
+                card.className = 'col-lg-4 col-md-6';
+                card.setAttribute('data-aos', 'fade-up');
+                card.setAttribute('data-aos-delay', (index * 200).toString());
+
+                const formattedDate = this.formatDate(achievement.created_at);
+                
+                // Handle image for featured cards
+                const imageHtml = achievement.image_url ? 
+                    `<img src="${achievement.image_url}" alt="${achievement.title}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                     <div class="no-image" style="display: none;"><i class="fas fa-trophy"></i></div>` :
+                    `<div class="no-image"><i class="fas fa-trophy"></i></div>`;
+
+                card.innerHTML = `
+                    <div class="featured-achievement-card" onclick="window.achievementsManager.showAchievementModal(${achievement.id})">
+                        <div class="featured-image">
+                            ${imageHtml}
+                        </div>
+                        <div class="featured-content">
+                            <div class="featured-category">${achievement.category}</div>
+                            <h3>${achievement.title}</h3>
+                            <p>${this.truncateText(achievement.description, 100)}</p>
+                            <div class="featured-date"><i class="fas fa-calendar"></i> ${formattedDate}</div>
+                        </div>
+                    </div>
+                `;
+
+                return card;
+            }
+
+            /**
+             * Show achievement modal with details
+             */
+            showAchievementModal(achievementId) {
+                const achievement = this.achievements.find(a => a.id == achievementId);
+                if (!achievement) {
+                    console.error('Achievement not found:', achievementId);
+                    return;
+                }
+
+                const modal = document.getElementById('achievementModal');
+                const modalLabel = document.getElementById('achievementModalLabel');
+                const modalBody = document.getElementById('achievementModalBody');
+
+                if (!modal || !modalLabel || !modalBody) {
+                    console.error('Modal elements not found');
+                    return;
+                }
+
+                modalLabel.textContent = achievement.title;
+
+                const formattedDate = this.formatDate(achievement.created_at);
+                const isFeatured = achievement.is_featured || achievement.featured;
+                
+                // Handle image in modal
+                const imageHtml = achievement.image_url ? 
+                    `<img src="${achievement.image_url}" alt="${achievement.title}" class="img-fluid rounded mb-3" onerror="this.style.display='none';">` :
+                    `<div class="text-center mb-3"><i class="fas fa-trophy fa-5x text-muted"></i></div>`;
+
+                modalBody.innerHTML = `
+                    <div class="achievement-modal-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="achievement-details">
+                                    <div class="badge bg-primary mb-2">${achievement.category}</div>
+                                    ${isFeatured ? '<div class="badge bg-warning mb-2 ms-2"><i class="fas fa-star"></i> Featured</div>' : ''}
+                                    <p class="text-muted mb-3"><i class="fas fa-calendar"></i> ${formattedDate}</p>
+                                    <p class="achievement-description">${achievement.description}</p>
+                                    <div class="achievement-stats mt-3">
+                                        <small class="text-muted">
+                                            <i class="fas fa-database"></i> Achievement ID: ${achievement.id}
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Store current achievement for sharing
+                this.currentAchievement = achievement;
+
+                const bsModal = new bootstrap.Modal(modal);
+                bsModal.show();
+            }
+
+            /**
+             * Share achievement
+             */
+            shareAchievement(achievementId) {
+                const achievement = this.achievements.find(a => a.id == achievementId);
+                if (!achievement) return;
+
+                const shareData = {
+                    title: `${achievement.title} - Makalanegama School`,
+                    text: achievement.description,
+                    url: window.location.href + `#achievement-${achievement.id}`
+                };
+
+                if (navigator.share) {
+                    navigator.share(shareData).catch(console.error);
+                } else {
+                    // Fallback to copying URL
+                    const url = shareData.url;
+                    navigator.clipboard.writeText(url).then(() => {
+                        this.showToast('Achievement link copied to clipboard!');
+                    }).catch(() => {
+                        // Final fallback
+                        prompt('Copy this link to share the achievement:', url);
+                    });
+                }
+            }
+
+            /**
+             * Load more achievements
+             */
+            loadMoreAchievements() {
+                if (this.isLoading) return;
+
+                this.isLoading = true;
+                this.currentPage++;
+
+                const startIndex = (this.currentPage - 1) * this.achievementsPerPage;
+                const endIndex = this.currentPage * this.achievementsPerPage;
+                const newAchievements = this.filteredAchievements.slice(startIndex, endIndex);
+
+                newAchievements.forEach((achievement, index) => {
+                    const achievementCard = this.createAchievementCard(achievement, index);
+                    this.achievementsGrid.appendChild(achievementCard);
+                });
+
+                this.updateLoadMoreButton();
+                this.animateCards();
+                this.isLoading = false;
+            }
+
+            /**
+             * Update load more button visibility
+             */
+            updateLoadMoreButton() {
+                if (!this.loadMoreBtn) return;
+
+                const totalShown = this.currentPage * this.achievementsPerPage;
+                const hasMore = totalShown < this.filteredAchievements.length;
+
+                this.loadMoreBtn.style.display = hasMore ? 'inline-flex' : 'none';
+            }
+
+            /**
+             * Update statistics
+             */
+            updateStatistics() {
+                const total = this.achievements.length;
+                const featured = this.achievements.filter(a => a.is_featured || a.featured).length;
+                const categories = [...new Set(this.achievements.map(a => a.category))].length;
+
+                // Update header stats
+                this.animateCounter(this.totalAchievementsEl, total);
+                this.animateCounter(this.featuredCountEl, featured);
+                this.animateCounter(this.categoriesCountEl, categories);
+            }
+
+            /**
+             * Animate counter from 0 to target value
+             */
+            animateCounter(element, target) {
+                if (!element) return;
+
+                let current = 0;
+                const increment = target / 30;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        element.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        element.textContent = Math.floor(current);
+                    }
+                }, 50);
+            }
+
+            /**
+             * Show/hide loading indicator
+             */
+            showLoading(show) {
+                if (this.loadingIndicator) {
+                    this.loadingIndicator.style.display = show ? 'block' : 'none';
+                }
+            }
+
+            /**
+             * Show error message
+             */
+            showError(message) {
+                if (this.apiErrorDiv && this.errorMessageEl) {
+                    this.errorMessageEl.textContent = message;
+                    this.apiErrorDiv.style.display = 'block';
+                }
+            }
+
+            /**
+             * Hide error message
+             */
+            hideError() {
+                if (this.apiErrorDiv) {
+                    this.apiErrorDiv.style.display = 'none';
+                }
+            }
+
+            /**
+             * Show no achievements message
+             */
+            showNoAchievements(message) {
+                if (this.noAchievementsDiv) {
+                    const messageEl = this.noAchievementsDiv.querySelector('p');
+                    if (messageEl) {
+                        messageEl.textContent = message;
+                    }
+                    this.noAchievementsDiv.style.display = 'block';
+                }
+            }
+
+            /**
+             * Hide no achievements message
+             */
+            hideNoAchievements() {
+                if (this.noAchievementsDiv) {
+                    this.noAchievementsDiv.style.display = 'none';
+                }
+            }
+
+            /**
+             * Animate cards on display
+             */
+            animateCards() {
+                if (typeof gsap !== 'undefined') {
+                    gsap.from('.achievement-card', {
+                        y: 30,
+                        opacity: 0,
+                        duration: 0.6,
+                        stagger: 0.1,
+                        ease: "power2.out"
+                    });
+                }
+            }
+
+            /**
+             * Animate filter change
+             */
+            animateFilterChange() {
+                if (typeof gsap !== 'undefined') {
+                    gsap.from('.filter-btn', {
+                        scale: 0.95,
+                        duration: 0.2,
+                        stagger: 0.05,
+                        ease: "power2.out"
+                    });
+                }
+            }
+
+            /**
+             * Show toast notification
+             */
+            showToast(message) {
+                const toast = document.createElement('div');
+                toast.className = 'toast-notification';
+                toast.textContent = message;
+                toast.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: var(--success);
+                    color: white;
+                    padding: 1rem;
+                    border-radius: 5px;
+                    z-index: 9999;
+                    animation: slideIn 0.3s ease-out;
+                `;
+
+                document.body.appendChild(toast);
+
+                setTimeout(() => {
+                    toast.remove();
+                }, 3000);
+            }
+
+            /**
+             * Format date for display
+             */
+            formatDate(dateString) {
+                if (!dateString) return 'No date';
+                try {
+                    const date = new Date(dateString);
+                    return date.toLocaleDateString('en', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                    });
+                } catch (error) {
+                    console.error('Error formatting date:', error);
+                    return 'Invalid date';
+                }
+            }
+
+            /**
+             * Truncate text to specified length
+             */
+            truncateText(text, maxLength) {
+                if (!text) return 'No description available';
+                if (text.length <= maxLength) return text;
+                return text.substring(0, maxLength).trim() + '...';
+            }
+
+            /**
+             * Debounce function for search
+             */
+            debounce(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            }
+        }
+
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Static achievements page functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing static achievements page...');
+            initializeStaticAchievements();
+        });
+
+        /**
+         * Static Achievements Page Functionality
+         */
+        function initializeStaticAchievements() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const searchInput = document.getElementById('achievement-search');
+            const achievementCards = document.querySelectorAll('.achievement-card');
+            const backToTopBtn = document.getElementById('backToTop');
+            const loadMoreBtn = document.getElementById('load-more-achievements');
+
+            // Filter functionality for static cards
+            if (filterButtons.length > 0) {
+                filterButtons.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const filter = btn.getAttribute('data-filter');
+                        
+                        // Update active button
+                        filterButtons.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        
+                        // Filter cards
+                        achievementCards.forEach(card => {
+                            const category = card.getAttribute('data-category') || '';
+                            let show = filter === 'all';
+                            
+                            if (filter === 'technology' && category === 'technology') show = true;
+                            if (filter === 'sports' && category === 'sports') show = true;
+                            if (filter === 'academic' && category === 'academic') show = true;
+                            if (filter === 'cultural' && category === 'cultural') show = true;
+                            
+                            card.style.display = show ? 'block' : 'none';
+                        });
+                    });
+                });
+            }
+            
+            // Search functionality for static cards
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const searchTerm = e.target.value.toLowerCase();
+                    
+                    achievementCards.forEach(card => {
+                        const title = card.querySelector('h4')?.textContent?.toLowerCase() || '';
+                        const description = card.querySelector('p')?.textContent?.toLowerCase() || '';
+                        const category = card.querySelector('.achievement-category')?.textContent?.toLowerCase() || '';
+                        
+                        const matches = title.includes(searchTerm) || 
+                                      description.includes(searchTerm) || 
+                                      category.includes(searchTerm);
+                        
+                        card.style.display = matches ? 'block' : 'none';
+                    });
+                });
+            }
+
+            // Back to top button
+            if (backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.scrollY > 500;
+                    backToTopBtn.classList.toggle('visible', scrolled);
+                });
+                
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // Hide load more button since all achievements are static
+            if (loadMoreBtn) {
+                loadMoreBtn.style.display = 'none';
+            }
+
+            // Update statistics to show actual counts
+            updateStaticStats();
+        }
+
+        // Update static statistics
+        function updateStaticStats() {
+            const totalAchievementsEl = document.getElementById('total-achievements');
+            const featuredCountEl = document.getElementById('featured-count');
+            const categoriesCountEl = document.getElementById('categories-count');
+
+            // Static counts based on our data
+            const totalAchievements = 7;
+            const featuredCount = 7; // All are featured
+            const categoriesCount = 2; // Technology and Sports
+
+            if (totalAchievementsEl) totalAchievementsEl.textContent = totalAchievements;
+            if (featuredCountEl) featuredCountEl.textContent = featuredCount;
+            if (categoriesCountEl) categoriesCountEl.textContent = categoriesCount;
+        }
+
+        // Global function for achievement modal (simplified)
+        function viewAchievement(id) {
+            const achievementData = {
+                5: {
+                    title: "Charuka Breaks Barriers in IT!",
+                    description: "Making History Together! 🌟\nToday, Charuka from Makalanegama Vidyalaya etched his name in history as the first student from our school to participate in the IT competition organized by the Mahava Zone! His passion, perseverance, and pursuit of excellence are a true inspiration.\nWe are incredibly proud of you, Charuka — Grade 10 and already paving the way for many more to follow. 💻✨\nBest wishes for the competition!\n\n#DestinyLab #ProudMoment #ReshapingDestinies #MakalanegamaVidyalaya #StudentSuccess #InspiringYouth",
+                    image_url: "assets/uploads/2025/07/686a109d1c4a9.jpg",
+                    category: "Technology",
+                    created_at: "2025-07-06 05:58:53"
+                },
+                6: {
+                    title: "Charuka Shines in Zonal IT Competition!",
+                    description: "Congratulations to Charuka Umesh for his remarkable achievement! 🎉\nYesterday, he proudly secured 3rd place in the Mahava Zonal IT Competition, a true testament to his incredible talent and passion for technology.\n\nCharuka wowed the judges with his creativity and innovation by developing a captivating 2D educational game a brilliant showcase of his skills and dedication.\n\nYour hard work has not only brought pride to Makalanegama Vidyalaya but also inspired many others to dream big and aim high. 🌟\nWell done, Charuka! Keep coding, keep creating!\n\n#ITCompetition #GameDevelopment #ReshapingDestinies #DestinyLab #ProudMoment #MakalanegamaVidyalaya #StudentAchievement #TechTalent",
+                    image_url: "assets/uploads/2025/07/686a111a6bb98.jpg",
+                    category: "Technology",
+                    created_at: "2025-07-06 06:00:58"
+                },
+                7: {
+                    title: "Marching Toward Greatness – NCC Pride!",
+                    description: "We are proud to celebrate the outstanding achievement of two dedicated students of Makalanegama Vidyalaya who have successfully completed the Junior Leadership Training Camp under the National Cadet Corps (NCC)!\n\n👏 Seargent D.M.C.U. Upashena (PC/B/0544)\n👏 Corporal S.W.D.T. Senaviratna (PC/B/0545)\n\nYour discipline, commitment, and leadership have brought honor to our school and set a powerful example for your fellow students. We salute your efforts and wish you continued success in your journey ahead! 🌟\n\n#NCC #StudentLeaders #ProudMoment #MakalanegamaVidyalaya #ReshapingDestinies #DestinyLab #DisciplineAndDuty #YouthLeadership #CadetCorps",
+                    image_url: "assets/uploads/2025/07/686a11b2d8a48.jpg",
+                    category: "Sports",
+                    created_at: "2025-07-06 06:03:30"
+                },
+                8: {
+                    title: "Celebrating Our Sports Champions!",
+                    description: "Warmest congratulations to the talented students of our school who achieved remarkable victories at the 2023 Athletics Meet!\nYour dedication, discipline, and determination have made us all proud.\n\nWe extend our heartfelt wishes for your continued success keep shining, champions! 🌟\n\n#AthleticsMeet2023 #StudentChampions #ProudMoment #MakalanegamaVidyalaya #ReshapingDestinies #DestinyLab #SchoolPride #Sportsmanship",
+                    image_url: "assets/uploads/2025/07/686a1271b9f1e.jpg",
+                    category: "Sports",
+                    created_at: "2025-07-06 06:06:41"
+                },
+                9: {
+                    title: "Future Tech Leaders in Action!",
+                    description: "Best of luck to our brilliant students from Destiny Lab as they step into the final round of the Young Computer Scientist Competition organized by the Ministry of Education! 🇱🇰\nWe're incredibly proud to see Makalanegama K.V. represented by such passionate and talented young minds.\n\nGo out there and shine the future is yours to create! 🌟\n\n#GoodLuck #YoungComputerScientists #DestinyLab #MakalanegamaVidyalaya #ProudMoment #InnovationInEducation #FutureTechLeaders",
+                    image_url: "assets/uploads/2025/07/686a12edada97.jpg",
+                    category: "Technology",
+                    created_at: "2025-07-06 06:08:45"
+                },
+                10: {
+                    title: "From Learners to Leaders in Tech!",
+                    description: "From computer beginners to IT competition champions — the transformation at Makalanegama Vidyalaya has been nothing short of inspiring.\nWe are truly proud to have provided an IT lab and digital education to these bright young minds. Watching them grow, excel, and confidently step into the world of technology is a powerful reminder of what access and opportunity can achieve.\n\nTogether, we're unlocking futures and reshaping destinies. 🌍💻\n\n#EmpoweringTheFuture #DigitalEmpowerment #TechForAll #UnlockingPotential #DestinyLab #MakalanegamaVidyalaya #ProudMoment",
+                    image_url: "assets/uploads/2025/07/686a133035119.jpg",
+                    category: "Technology",
+                    created_at: "2025-07-06 06:09:52"
+                },
+                11: {
+                    title: "Champion of Innovation – Charuka Leads the Way!",
+                    description: "Congratulations to Charuka, the 1st Place Winner of the North Western Provincial Robotics and Invention Competition! 🏆\nYour creativity, determination, and passion for technology have earned you this incredible achievement, and we couldn't be prouder.\n\nWe are honored to have supported your journey through Destiny Lab, and we know this is only the beginning of your bright future in innovation. 🚀\nKeep pushing boundaries and reaching for the stars! 🌟\n\n#RoboticsChampion #InventionWinner #Makalanegama #DestinyLab #FutureGenerations #ProudMoment #TechInnovation #StudentSuccess",
+                    image_url: "assets/uploads/2025/07/686a137828c04.jpg",
+                    category: "Technology",
+                    created_at: "2025-07-06 06:11:04"
+                }
+            };
+
+            const achievement = achievementData[id];
+            if (!achievement) {
+                console.error('Achievement not found:', id);
+                return;
+            }
+
+            // Update modal content if modal exists
+            const modal = document.getElementById('achievementModal');
+            if (modal) {
+                document.getElementById('achievementModalLabel').textContent = achievement.title;
+                document.getElementById('modalAchievementImage').src = achievement.image_url;
+                document.getElementById('modalAchievementImage').alt = achievement.title;
+                document.getElementById('modalAchievementCategory').textContent = achievement.category;
+                document.getElementById('modalAchievementDate').textContent = new Date(achievement.created_at).toLocaleDateString('en', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+                document.getElementById('modalAchievementDescription').textContent = achievement.description;
+
+                // Show modal
+                const bootstrapModal = new bootstrap.Modal(modal);
+                bootstrapModal.show();
+            }
+        }
+    </script>
+</body>
+</html>

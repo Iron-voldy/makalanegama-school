@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Makalanegama School</title>
+    <meta name="description" content="Learn about Makalanegama School's history, mission, vision, and values. Discover our facilities, programs, and commitment to educational excellence in Galgamuwa, Sri Lanka.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="About Us - Makalanegama School">
+    <meta property="og:description" content="Discover our history, mission, and commitment to educational excellence in Galgamuwa, Sri Lanka">
+    <meta property="og:image" content="assets/images/gallery/classroom-activity.jpg">
+    <meta property="og:url" content="https://makalanegamaschool.lk/about.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Sinhala:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    
+    <style>
+        /* Navigation Enhancement for About Page */
+        :root {
+            --font-primary: 'Inter', 'Noto Sans Sinhala', sans-serif;
+            --font-sinhala: 'Noto Sans Sinhala', sans-serif;
+            --maroon-primary: #800020;
+            --maroon-dark: #5d0017;
+            --gold-accent: #ffd700;
+            --white: #ffffff;
+            --medium-gray: #64748b;
+            --dark-gray: #334155;
+            --transition-fast: 0.2s ease-out;
+            --transition-medium: 0.3s ease-out;
+        }
+
+        /* Navigation */
+        .custom-navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(128, 0, 32, 0.1);
+            padding: 1rem 0;
+            transition: var(--transition-medium);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .navbar-brand .logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        .school-name .primary-name {
+            display: block;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--maroon-primary);
+            line-height: 1.2;
+        }
+
+        .school-name .secondary-name {
+            display: block;
+            font-family: var(--font-sinhala);
+            font-size: 0.875rem;
+            color: var(--medium-gray);
+            line-height: 1.2;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: var(--dark-gray);
+            padding: 0.5rem 1rem;
+            position: relative;
+            transition: var(--transition-fast);
+        }
+
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link:hover {
+            color: var(--maroon-primary);
+        }
+
+        /* Mobile Responsive Navigation Fixes */
+        @media (max-width: 991.98px) {
+            /* Prevent horizontal overflow */
+            html, body {
+                overflow-x: hidden !important;
+                width: 100% !important;
+                max-width: 100vw !important;
+            }
+            
+            /* Navbar container fixes */
+            .custom-navbar {
+                width: 100% !important;
+                overflow: hidden !important;
+                padding: 0.5rem 0 !important;
+                position: relative !important;
+            }
+            
+            .custom-navbar .container {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 0 1rem !important;
+                margin: 0 !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                position: relative !important;
+            }
+            
+            /* Navbar brand - limit width strictly */
+            .navbar-brand {
+                flex: 0 1 auto !important;
+                max-width: calc(100vw - 60px) !important;
+                min-width: 0 !important;
+                overflow: hidden !important;
+                margin-right: 0 !important;
+                display: flex !important;
+                align-items: center !important;
+                gap: 0.5rem !important;
+            }
+            
+            .navbar-brand .school-name {
+                flex: 1 !important;
+                min-width: 0 !important;
+                overflow: hidden !important;
+                max-width: calc(100vw - 120px) !important;
+            }
+            
+            .navbar-brand .school-name .primary-name,
+            .navbar-brand .school-name .secondary-name {
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+                display: block !important;
+            }
+            
+            .navbar-brand .logo {
+                flex-shrink: 0 !important;
+                width: 35px !important;
+                height: 35px !important;
+            }
+            
+            /* Toggle button - FIXED POSITIONING */
+            .navbar-toggler {
+                position: absolute !important;
+                top: 50% !important;
+                right: 1rem !important;
+                transform: translateY(-50%) !important;
+                width: 44px !important;
+                height: 44px !important;
+                padding: 0 !important;
+                border: 2px solid var(--maroon-primary) !important;
+                border-radius: 6px !important;
+                background: var(--white) !important;
+                z-index: 1050 !important;
+                flex-shrink: 0 !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            .navbar-toggler:focus {
+                box-shadow: 0 0 0 0.2rem rgba(128, 0, 32, 0.25) !important;
+            }
+            
+            .navbar-toggler-icon {
+                width: 20px !important;
+                height: 20px !important;
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23800020' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+            }
+        }
+
+        /* Smaller mobile devices */
+        @media (max-width: 576px) {
+            .navbar-brand .school-name .primary-name {
+                font-size: 1rem !important;
+            }
+            
+            .navbar-brand .school-name .secondary-name {
+                font-size: 0.75rem !important;
+            }
+            
+            .navbar-brand .logo {
+                width: 30px !important;
+                height: 30px !important;
+            }
+            
+            .navbar-toggler {
+                top: 15px !important;
+                right: 10px !important;
+                width: 42px !important;
+                height: 42px !important;
+            }
+        }
+        
+        /* Very small devices */
+        @media (max-width: 360px) {
+            .navbar-brand {
+                max-width: calc(100vw - 55px) !important;
+            }
+            
+            .navbar-brand .school-name {
+                max-width: calc(100vw - 100px) !important;
+            }
+            
+            .navbar-brand .school-name .primary-name {
+                font-size: 0.875rem !important;
+            }
+            
+            .navbar-brand .school-name .secondary-name {
+                font-size: 0.65rem !important;
+            }
+            
+            .navbar-brand .logo {
+                width: 28px !important;
+                height: 28px !important;
+            }
+            
+            .navbar-toggler {
+                top: 12px !important;
+                right: 8px !important;
+                width: 40px !important;
+                height: 40px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo/logo.png" alt="Makalanegama School" class="logo">
+                <span class="school-name">
+                    <span class="primary-name">Makalanegama School</span>
+                    <span class="secondary-name">මාකලනේගම විද්‍යාලය</span>
+                </span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="about.html">About Us</a></li>
+                            <li><a class="dropdown-item" href="curriculum.html">Curriculum</a></li>
+                            <li><a class="dropdown-item" href="student-life.html">Student Life</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teachers.html">Teachers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="achievements.html">Achievements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admissions.html">Admissions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero-section" id="about-hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <div class="hero-pattern"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-8">
+                    <div class="hero-content">
+                        <nav aria-label="breadcrumb" data-aos="fade-up">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active">About Us</li>
+                            </ol>
+                        </nav>
+                        
+                        <div class="hero-badge" data-aos="fade-up" data-aos-delay="100">
+                            <i class="fas fa-school"></i>
+                            Provincial Type 2 School
+                        </div>
+                        
+                        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+                            About <span class="text-maroon">Makalanegama</span> School
+                        </h1>
+                        
+                        <h2 class="hero-subtitle-sinhala" data-aos="fade-up" data-aos-delay="300">
+                            මාකලනේගම විද්‍යාලය ගැන
+                        </h2>
+                        
+                        <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
+                            Discover our rich history, educational philosophy, and unwavering commitment to nurturing young minds 
+                            in the heart of Galgamuwa, North Western Province, Sri Lanka.
+                        </p>
+                        
+                        <div class="hero-stats" data-aos="fade-up" data-aos-delay="500">
+                            <div class="stat-item">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Students</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">25+</div>
+                                <div class="stat-label">Teachers</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">11</div>
+                                <div class="stat-label">Grades</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">136+</div>
+                                <div class="stat-label">Years</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="hero-scroll-indicator">
+            <div class="scroll-line"></div>
+            <div class="scroll-text">Scroll to explore</div>
+        </div>
+    </section>
+
+    <!-- Mission Vision Values Section -->
+    <section class="mission-vision-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <div class="section-badge">
+                    Our Foundation
+                </div>
+                <h2 class="section-title">
+                    Mission, Vision & <span class="text-maroon">Values</span>
+                </h2>
+                <p class="section-description">
+                    The guiding principles that shape our educational approach and school culture
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mvv-card mission-card">
+                        <div class="mvv-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To provide quality education that nurtures academic excellence, character development, and lifelong learning skills, preparing students to become responsible global citizens while preserving our cultural heritage.</p>
+                        <div class="mvv-footer">
+                            <span class="mvv-label">Mission</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mvv-card vision-card">
+                        <div class="mvv-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p>To be a leading educational institution in the North Western Province, recognized for academic excellence, innovative teaching methods, and the holistic development of students who contribute positively to society.</p>
+                        <div class="mvv-footer">
+                            <span class="mvv-label">Vision</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mvv-card values-card">
+                        <div class="mvv-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Our Values</h3>
+                        <ul class="values-list">
+                            <li><i class="fas fa-check"></i> Excellence in Education</li>
+                            <li><i class="fas fa-check"></i> Respect & Integrity</li>
+                            <li><i class="fas fa-check"></i> Cultural Pride</li>
+                            <li><i class="fas fa-check"></i> Community Service</li>
+                            <li><i class="fas fa-check"></i> Innovation & Growth</li>
+                        </ul>
+                        <div class="mvv-footer">
+                            <span class="mvv-label">Values</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Story Section -->
+    <section class="school-story-section py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="story-content">
+                        <div class="section-badge">
+                            Our Story
+                        </div>
+                        <h2 class="section-title">
+                            A Legacy of <span class="text-maroon">Educational Excellence</span>
+                        </h2>
+                        <p class="section-description">
+                            Makalanegama Vidyalaya stands as a beacon of educational excellence in the North Western Province 
+                            of Sri Lanka. Located in the vibrant community of Galgamuwa, our school has been dedicated to 
+                            providing quality Sinhala-medium education from Grade 1 to Grade 11.
+                        </p>
+                        
+                        <div class="story-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="highlight-content">
+                                    <h5>Prime Location</h5>
+                                    <p>Strategically located in Galgamuwa-Nikawewa Road, serving the educational needs of the local community with easy accessibility.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="highlight-content">
+                                    <h5>Co-Educational Environment</h5>
+                                    <p>Fostering collaborative learning and diverse perspectives through our inclusive mixed-gender educational approach.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="highlight-content">
+                                    <h5>Provincial Type 2 Status</h5>
+                                    <p>Recognized as a Provincial Type 2 school, maintaining high educational standards and government accreditation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="story-visual">
+                        <div class="main-image">
+                            <img src="assets/images/gallery/classroom-activity.jpg" alt="Students in Classroom" class="img-fluid rounded">
+                            <div class="image-overlay">
+                                <div class="overlay-badge">
+                                    <i class="fas fa-users"></i>
+                                    <span>Active Learning Environment</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="side-images">
+                            <div class="side-image">
+                                <img src="assets/images/facilities/computer-lab.jpg" alt="Computer Lab" class="img-fluid rounded">
+                                <div class="side-overlay">
+                                    <span>Modern Facilities</span>
+                                </div>
+                            </div>
+                            <div class="side-image">
+                                <img src="assets/images/gallery/students-learning.jpg" alt="Students Learning" class="img-fluid rounded">
+                                <div class="side-overlay">
+                                    <span>Quality Education</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="facilities-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <div class="section-badge">
+                    Our Facilities
+                </div>
+                <h2 class="section-title">
+                    Modern <span class="text-maroon">Learning Environment</span>
+                </h2>
+                <p class="section-description">
+                    State-of-the-art facilities designed to enhance the learning experience
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="facility-card">
+                        <div class="facility-image">
+                            <img src="assets/images/facilities/computer-lab.jpg" alt="Computer Lab" class="img-fluid">
+                            <div class="facility-overlay">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                        </div>
+                        <div class="facility-content">
+                            <h4>Computer Laboratory</h4>
+                            <p>Modern computer lab equipped with latest technology to enhance digital learning and computer literacy among students.</p>
+                            <ul class="facility-features">
+                                <li><i class="fas fa-check"></i> Latest Computers</li>
+                                <li><i class="fas fa-check"></i> High-Speed Internet</li>
+                                <li><i class="fas fa-check"></i> Educational Software</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="facility-card">
+                        <div class="facility-image">
+                            <img src="assets/images/gallery/sports-day.jpg" alt="Sports Facilities" class="img-fluid">
+                            <div class="facility-overlay">
+                                <i class="fas fa-running"></i>
+                            </div>
+                        </div>
+                        <div class="facility-content">
+                            <h4>Sports Facilities</h4>
+                            <p>Comprehensive sports facilities including playground, volleyball court, and equipment for various sports activities.</p>
+                            <ul class="facility-features">
+                                <li><i class="fas fa-check"></i> Playground</li>
+                                <li><i class="fas fa-check"></i> Volleyball Court</li>
+                                <li><i class="fas fa-check"></i> Sports Equipment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Life Gallery -->
+    <section class="school-life-section py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <div class="section-badge">
+                    School Life
+                </div>
+                <h2 class="section-title">
+                    Life at <span class="text-maroon">Makalanegama School</span>
+                </h2>
+                <p class="section-description">
+                    Glimpses of our vibrant school community and daily activities
+                </p>
+            </div>
+            
+            <div class="gallery-grid" data-aos="fade-up">
+                <div class="gallery-item large">
+                    <img src="assets/images/gallery/cultural-performance.jpg" alt="Cultural Performance" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h5>Cultural Programs</h5>
+                            <p>Traditional dance and music performances</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="assets/images/gallery/computer-class.jpg" alt="Computer Class" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h5>Digital Learning</h5>
+                            <p>Computer education</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="assets/images/gallery/volleyball-match.jpg" alt="Volleyball Match" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h5>Sports Activities</h5>
+                            <p>Inter-house competitions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="assets/images/gallery/gardening-project.jpg" alt="Gardening Project" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h5>Environmental Projects</h5>
+                            <p>Sustainability initiatives</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="student-life.html" class="btn btn-maroon btn-lg">
+                    <i class="fas fa-images"></i> Explore Student Life
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8" data-aos="fade-right">
+                    <div class="cta-content">
+                        <h2>Ready to Join Our School Community?</h2>
+                        <p>Discover how Makalanegama School can provide your child with quality education, modern facilities, and a supportive learning environment that prepares them for future success.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+                    <div class="cta-buttons">
+                        <a href="admissions.html" class="btn btn-maroon btn-lg me-3">
+                            <i class="fas fa-user-plus"></i> Apply for Admission
+                        </a>
+                        <a href="contact.html" class="btn btn-outline-maroon btn-lg">
+                            <i class="fas fa-phone"></i> Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <img src="assets/images/logo/logo.png" alt="Makalanegama School" class="footer-logo">
+                        <h5>Makalanegama School</h5>
+                        <p class="footer-description">
+                            Nurturing young minds with wisdom, virtue, and excellence in the heart of Galgamuwa, 
+                            Sri Lanka since 1888.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="teachers.html">Teachers</a></li>
+                            <li><a href="admissions.html">Admissions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2">
+                    <div class="footer-links">
+                        <h5>Information</h5>
+                        <ul>
+                            <li><a href="achievements.html">Achievements</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="footer-contact">
+                        <h5>Contact Information</h5>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>X8X5+VGH, Galgamuwa-Nikawewa Rd<br>Galgamuwa, North Western Province, Sri Lanka</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+94 37 2 245 678</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@makalanegamaschool.lk</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>&copy; 2024 Makalanegama School. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p>Designed with <i class="fas fa-heart text-maroon"></i> for Education</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- GSAP Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

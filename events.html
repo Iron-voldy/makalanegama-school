@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Events - Makalanegama School</title>
+    <meta name="description" content="Stay updated with upcoming events, school activities, and important dates at Makalanegama School. Never miss an important school event.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="School Events - Makalanegama School">
+    <meta property="og:description" content="Upcoming events, school activities, and important dates at Makalanegama School">
+    <meta property="og:image" content="assets/images/events/events-hero.jpg">
+    <meta property="og:url" content="https://makalanegamaschool.lk/events.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Sinhala:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    
+    <style>
+        /* Events Page Specific Styles */
+        :root {
+            --maroon-primary: #800020;
+            --maroon-dark: #5d0017;
+            --maroon-light: #a6334f;
+            --gold-accent: #ffd700;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --dark-gray: #334155;
+            --black: #1a1a1a;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --info: #3b82f6;
+            --danger: #ef4444;
+            --cream-background: #faf7f0;
+            
+            --font-primary: 'Inter', 'Noto Sans Sinhala', sans-serif;
+            --font-sinhala: 'Noto Sans Sinhala', sans-serif;
+            
+            --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-heavy: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            
+            --radius-small: 8px;
+            --radius-medium: 12px;
+            --radius-large: 20px;
+            
+            --transition-fast: 0.2s ease-out;
+            --transition-medium: 0.3s ease-out;
+            --transition-slow: 0.5s ease-out;
+        }
+
+        /* Navigation */
+        .custom-navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(128, 0, 32, 0.1);
+            padding: 1rem 0;
+            transition: var(--transition-medium);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .navbar-brand .logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        .school-name .primary-name {
+            display: block;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--maroon-primary);
+            line-height: 1.2;
+        }
+
+        .school-name .secondary-name {
+            display: block;
+            font-family: var(--font-sinhala);
+            font-size: 0.875rem;
+            color: var(--medium-gray);
+            line-height: 1.2;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: var(--dark-gray);
+            padding: 0.5rem 1rem;
+            position: relative;
+            transition: var(--transition-fast);
+        }
+
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link:hover {
+            color: var(--maroon-primary);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--maroon-primary) 0%, var(--maroon-dark) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 0 4rem;
+            margin-top: 76px;
+        }
+
+        .header-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .header-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+
+        /* Stylish Filter Buttons */
+        .filter-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-bottom: 3px solid var(--maroon-primary);
+        }
+
+        .filter-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px 0;
+        }
+
+        .filter-btn {
+            background: var(--white);
+            border: 2px solid var(--light-gray);
+            color: var(--dark-gray);
+            padding: 12px 24px;
+            border-radius: var(--radius-medium);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all var(--transition-medium);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            min-width: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .filter-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left var(--transition-slow);
+        }
+
+        .filter-btn:hover:before {
+            left: 100%;
+        }
+
+        .filter-btn i {
+            font-size: 16px;
+            transition: transform var(--transition-medium);
+        }
+
+        .filter-btn:hover {
+            background: var(--maroon-primary);
+            color: var(--white);
+            border-color: var(--maroon-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .filter-btn:hover i {
+            transform: scale(1.1);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--maroon-primary) 0%, var(--maroon-dark) 100%);
+            color: var(--white);
+            border-color: var(--maroon-primary);
+            box-shadow: var(--shadow-heavy);
+            transform: translateY(-1px);
+        }
+
+        .filter-btn.active i {
+            color: var(--gold-accent);
+            transform: scale(1.05);
+        }
+
+        .filter-btn:active {
+            transform: translateY(0);
+            box-shadow: var(--shadow-light);
+        }
+
+        /* Responsive Design for Filter Buttons */
+        @media (max-width: 768px) {
+            .filter-tabs {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 10px 16px;
+                font-size: 12px;
+                min-width: 110px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .filter-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        /* Enhanced Filter Button Icons */
+        .filter-btn[data-filter="all"] i { color: var(--info); }
+        .filter-btn[data-filter="academic"] i { color: var(--success); }
+        .filter-btn[data-filter="sports"] i { color: var(--warning); }
+        .filter-btn[data-filter="cultural"] i { color: #8b5cf6; }
+        .filter-btn[data-filter="parent"] i { color: #06b6d4; }
+        .filter-btn[data-filter="workshop"] i { color: #f97316; }
+
+        .filter-btn:hover i,
+        .filter-btn.active i {
+            color: var(--gold-accent) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo/logo.png" alt="Makalanegama School" class="logo">
+                <span class="school-name">
+                    <span class="primary-name">Makalanegama School</span>
+                    <span class="secondary-name">මාකලනේගම විද්‍යාලය</span>
+                </span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                            <li><a class="dropdown-item" href="curriculum.html">Curriculum</a></li>
+                            <li><a class="dropdown-item" href="student-life.html">Student Life</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teachers.html">Teachers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="achievements.html">Achievements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admissions.html">Admissions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="header-background">
+            <div class="header-overlay"></div>
+            <div class="header-pattern"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="header-content">
+                        <nav aria-label="breadcrumb" data-aos="fade-up">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active">Events</li>
+                            </ol>
+                        </nav>
+                        
+                        <h1 class="page-title" data-aos="fade-up" data-aos-delay="200">
+                            School <span style="color: var(--gold-accent);">Events</span>
+                        </h1>
+                        
+                        <h2 class="page-subtitle-sinhala" data-aos="fade-up" data-aos-delay="300">
+                            පාසල් වැඩසටහන්
+                        </h2>
+                        
+                        <p class="page-description" data-aos="fade-up" data-aos-delay="400">
+                            Stay informed about upcoming events, important dates, and exciting activities 
+                            happening at Makalanegama Vidyalaya. Never miss an important school event again.
+                        </p>
+                        
+                        <div class="page-stats" data-aos="fade-up" data-aos-delay="500">
+                            <div class="stat-item">
+                                <div class="stat-number" id="total-events">0</div>
+                                <div class="stat-label">Total Events</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="upcoming-events">0</div>
+                                <div class="stat-label">Upcoming</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="event-categories">0</div>
+                                <div class="stat-label">Categories</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-left" data-aos-delay="600">
+                    <div class="header-visual">
+                        <img src="assets/images/placeholder.jpg" alt="School Events" class="img-fluid rounded" 
+                             onerror="this.style.display='none'">
+                        <div class="visual-overlay">
+                            <div class="overlay-badge">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Upcoming Events</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Categories Filter -->
+    <section class="filter-section py-4 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="filter-tabs text-center" data-aos="fade-up">
+                        <button class="filter-btn active" data-filter="all">
+                            <i class="fas fa-calendar"></i>
+                            All Events
+                        </button>
+                        <button class="filter-btn" data-filter="academic">
+                            <i class="fas fa-graduation-cap"></i>
+                            Academic
+                        </button>
+                        <button class="filter-btn" data-filter="sports">
+                            <i class="fas fa-running"></i>
+                            Sports
+                        </button>
+                        <button class="filter-btn" data-filter="cultural">
+                            <i class="fas fa-masks-theater"></i>
+                            Cultural
+                        </button>
+                        <button class="filter-btn" data-filter="parent">
+                            <i class="fas fa-users"></i>
+                            Parent Meetings
+                        </button>
+                        <button class="filter-btn" data-filter="workshop">
+                            <i class="fas fa-tools"></i>
+                            Workshops
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Overview -->
+    <section class="calendar-overview-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="section-header mb-4" data-aos="fade-up">
+                        <div class="section-badge">
+                            This Month's Highlights
+                        </div>
+                        <h2 class="section-title">
+                            Upcoming <span class="text-maroon">Events</span>
+                        </h2>
+                        <p class="section-description">
+                            Don't miss these important school events and activities happening this month.
+                        </p>
+                    </div>
+                    
+                    <div class="events-container" id="events-timeline" style="display: block; width: 100%;">
+                        <!-- Event: Children School Fair -->
+                        <div class="event-item" data-category="cultural" data-aos="fade-up">
+                            <div class="event-date">
+                                <div class="date-number">TBA</div>
+                                <div class="date-month">Date</div>
+                                <div class="date-year">2025</div>
+                            </div>
+                            <div class="event-content">
+                                <div class="event-meta">
+                                    <span class="event-category cultural">Cultural Event</span>
+                                    <span class="event-time"><i class="fas fa-clock"></i> Time will be announced</span>
+                                    <span class="event-featured"><i class="fas fa-star"></i> Featured</span>
+                                </div>
+                                <h4 class="event-title">Children School Fair</h4>
+                                <p class="event-description">Join us for an exciting Children School Fair featuring fun activities, games, food stalls, and performances by our talented students. This annual event brings together the entire school community for a day of celebration, entertainment, and fundraising to support our school programs. Date and time will be announced soon!</p>
+                                <div class="event-details">
+                                    <div class="event-location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>School Grounds</span>
+                                    </div>
+                                    <div class="event-actions">
+                                        <button class="btn btn-maroon btn-sm" onclick="viewEvent(1)">
+                                            <i class="fas fa-eye"></i> View Details
+                                        </button>
+                                        <button class="btn btn-outline-maroon btn-sm" onclick="addToCalendar(1)">
+                                            <i class="fas fa-calendar-plus"></i> Add to Calendar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- No more events message for completeness -->
+                        <div class="no-more-events text-center py-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="no-events-icon">
+                                <i class="fas fa-calendar-check fa-3x text-muted"></i>
+                            </div>
+                            <h5 class="mt-3 text-muted">More Events Coming Soon</h5>
+                            <p class="text-muted">Stay tuned for announcements about upcoming school events and activities.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Load More Button -->
+                    <div class="text-center mt-5" data-aos="fade-up">
+                        <button id="load-more-events" class="btn btn-outline-maroon btn-lg">
+                            <i class="fas fa-plus"></i>
+                            Load More Events
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="sidebar-content">
+                        <!-- Mini Calendar -->
+                        <div class="widget calendar-widget" data-aos="fade-left" data-aos-delay="100">
+                            <div class="widget-header">
+                                <h5><i class="fas fa-calendar-alt"></i> Event Calendar</h5>
+                            </div>
+                            <div class="widget-content">
+                                <div class="mini-calendar" id="mini-calendar">
+                                    <div class="calendar-header">
+                                        <button class="btn-nav prev" id="prev-month"><i class="fas fa-chevron-left"></i></button>
+                                        <h6 id="current-month">February 2024</h6>
+                                        <button class="btn-nav next" id="next-month"><i class="fas fa-chevron-right"></i></button>
+                                    </div>
+                                    <div class="calendar-grid">
+                                        <div class="calendar-day header">Sun</div>
+                                        <div class="calendar-day header">Mon</div>
+                                        <div class="calendar-day header">Tue</div>
+                                        <div class="calendar-day header">Wed</div>
+                                        <div class="calendar-day header">Thu</div>
+                                        <div class="calendar-day header">Fri</div>
+                                        <div class="calendar-day header">Sat</div>
+                                        <!-- Calendar days will be generated by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Info -->
+                        <div class="widget info-widget" data-aos="fade-left" data-aos-delay="200">
+                            <div class="widget-header">
+                                <h5><i class="fas fa-info-circle"></i> Important Information</h5>
+                            </div>
+                            <div class="widget-content">
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <h6>School Hours</h6>
+                                        <p>Monday - Friday<br>7:30 AM - 1:30 PM</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <h6>Contact Office</h6>
+                                        <p><a href="tel:+94372053619">+94 37 205 3619</a></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="info-item">
+                                    <div class="info-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <h6>Email Us</h6>
+                                        <p><a href="mailto:info@makalanegamaschool.lk">info@makalanegamaschool.lk</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Event Categories -->
+                        <div class="widget categories-widget" data-aos="fade-left" data-aos-delay="300">
+                            <div class="widget-header">
+                                <h5><i class="fas fa-tags"></i> Event Categories</h5>
+                            </div>
+                            <div class="widget-content">
+                                <ul class="category-list">
+                                    <li><a href="#" data-category="academic"><i class="fas fa-graduation-cap"></i> Academic Events <span class="count">8</span></a></li>
+                                    <li><a href="#" data-category="sports"><i class="fas fa-running"></i> Sports Activities <span class="count">5</span></a></li>
+                                    <li><a href="#" data-category="cultural"><i class="fas fa-masks-theater"></i> Cultural Programs <span class="count">6</span></a></li>
+                                    <li><a href="#" data-category="parent"><i class="fas fa-users"></i> Parent Meetings <span class="count">4</span></a></li>
+                                    <li><a href="#" data-category="workshop"><i class="fas fa-tools"></i> Workshops <span class="count">3</span></a></li>
+                                    <li><a href="#" data-category="examination"><i class="fas fa-edit"></i> Examinations <span class="count">7</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Subscribe to Updates -->
+                        <div class="widget subscribe-widget" data-aos="fade-left" data-aos-delay="400">
+                            <div class="widget-header">
+                                <h5><i class="fas fa-bell"></i> Event Notifications</h5>
+                            </div>
+                            <div class="widget-content">
+                                <p>Stay updated with the latest school events and never miss important dates.</p>
+                                <form class="subscribe-form" id="event-subscribe-form">
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" placeholder="Enter your email" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-maroon w-100">
+                                        <i class="fas fa-bell"></i>
+                                        Subscribe to Updates
+                                    </button>
+                                </form>
+                                <small class="text-muted mt-2 d-block">
+                                    <i class="fas fa-shield-alt"></i>
+                                    We respect your privacy. Unsubscribe anytime.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Registration CTA -->
+    <section class="event-cta-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8" data-aos="fade-right">
+                    <div class="cta-content">
+                        <h2>Want to Organize a School Event?</h2>
+                        <p>We welcome community involvement in our school events. If you have ideas for educational programs, cultural activities, or want to volunteer for upcoming events, we'd love to hear from you.</p>
+                        <div class="cta-features">
+                            <div class="feature-item">
+                                <i class="fas fa-handshake"></i>
+                                <span>Community Partnership</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-calendar-plus"></i>
+                                <span>Event Planning Support</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-users"></i>
+                                <span>Volunteer Opportunities</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-maroon btn-lg">
+                            <i class="fas fa-paper-plane"></i>
+                            Propose an Event
+                        </a>
+                        <a href="contact.html" class="btn btn-outline-maroon btn-lg">
+                            <i class="fas fa-volunteer"></i>
+                            Volunteer
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="footer-brand">
+                            <img src="assets/images/logo/logo-white.png" alt="Makalanegama School" class="footer-logo">
+                            <h4>Makalanegama School</h4>
+                            <p class="footer-tagline">Excellence in Education Since 1888</p>
+                            <p>Nurturing young minds with wisdom, virtue, and excellence in the heart of Galgamuwa, North Western Province.</p>
+                            
+                            <div class="social-links">
+                                <a href="https://web.facebook.com/people/Makalanegama-kv/100063734032649/" target="_blank" class="social-link">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-links">
+                            <h5>Quick Links</h5>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="teachers.html">Our Teachers</a></li>
+                                <li><a href="curriculum.html">Curriculum</a></li>
+                                <li><a href="student-life.html">Student Life</a></li>
+                                <li><a href="admissions.html">Admissions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-links">
+                            <h5>Information</h5>
+                            <ul>
+                                <li><a href="achievements.html">Achievements</a></li>
+                                <li><a href="events.html">Events</a></li>
+                                <li><a href="news.html">News</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="footer-contact">
+                            <h5>Contact Information</h5>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Address:</strong><br>
+                                    X8X5+VGH, Galgamuwa-Nikawewa Rd,<br>
+                                    Galgamuwa, North Western Province,<br>
+                                    Sri Lanka
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone:</strong><br>
+                                    <a href="tel:+94372053619">+94 37 205 3619</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email:</strong><br>
+                                    <a href="mailto:info@makalanegamaschool.lk">info@makalanegamaschool.lk</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>School Hours:</strong><br>
+                                    Monday - Friday: 7:30 AM - 1:30 PM
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>&copy; 2024 Makalanegama School. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p>Designed with ❤️ for educational excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <!-- Dynamic loading script removed - using static implementation --></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Initialize static events page functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeMiniCalendar();
+            initializeEventSubscription();
+            initializeStaticEvents();
+        });
+
+        // Static events page functionality
+        function initializeStaticEvents() {
+            const loadMoreBtn = document.getElementById('load-more-events');
+            const eventItems = document.querySelectorAll('.event-item');
+            
+            // Hide load more button since all events are static
+            if (loadMoreBtn) {
+                loadMoreBtn.style.display = 'none';
+            }
+            
+            // Update static statistics
+            updateStaticEventStats();
+            
+            // Add filter functionality if needed
+            const filterButtons = document.querySelectorAll('.event-filter-btn');
+            if (filterButtons.length > 0) {
+                filterButtons.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const filter = btn.getAttribute('data-filter');
+                        
+                        // Update active button
+                        filterButtons.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        
+                        // Filter events
+                        eventItems.forEach(item => {
+                            const category = item.getAttribute('data-category') || '';
+                            let show = filter === 'all';
+                            
+                            if (filter === 'academic' && category === 'academic') show = true;
+                            if (filter === 'parent-meeting' && category === 'parent-meeting') show = true;
+                            if (filter === 'sports' && category === 'sports') show = true;
+                            if (filter === 'cultural' && category === 'cultural') show = true;
+                            
+                            item.style.display = show ? 'block' : 'none';
+                        });
+                    });
+                });
+            }
+        }
+
+        // Update static event statistics
+        function updateStaticEventStats() {
+            const totalEventsEl = document.getElementById('total-events');
+            const upcomingEventsEl = document.getElementById('upcoming-events');
+            const eventCategoriesEl = document.getElementById('event-categories');
+
+            // Static counts based on our data
+            const totalEvents = 1;
+            const upcomingEvents = 1; // Children School Fair is upcoming
+            const eventCategories = 1; // Cultural Event
+
+            if (totalEventsEl) totalEventsEl.textContent = totalEvents;
+            if (upcomingEventsEl) upcomingEventsEl.textContent = upcomingEvents;
+            if (eventCategoriesEl) eventCategoriesEl.textContent = eventCategories;
+        }
+
+        // Global functions for event interactions
+        function viewEvent(id) {
+            const eventData = {
+                1: {
+                    title: "Children School Fair",
+                    description: "Join us for an exciting Children School Fair featuring fun activities, games, food stalls, and performances by our talented students. This annual event brings together the entire school community for a day of celebration, entertainment, and fundraising to support our school programs. Date and time will be announced soon!",
+                    event_date: "TBA",
+                    event_time: "Time will be announced",
+                    location: "School Grounds",
+                    category: "Cultural Event"
+                }
+            };
+
+            const event = eventData[id];
+            if (!event) {
+                console.error('Event not found:', id);
+                return;
+            }
+
+            // Create a simple modal or alert for event details
+            const eventDetails = `
+Event: ${event.title}
+Date: ${event.event_date === 'TBA' ? 'To Be Announced' : new Date(event.event_date).toLocaleDateString('en', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+})}
+Time: ${event.event_time}
+Location: ${event.location}
+Category: ${event.category}
+
+Description: ${event.description}
+            `;
+            
+            alert(eventDetails);
+        }
+
+        function addToCalendar(id) {
+            const eventData = {
+                1: {
+                    title: "Children School Fair",
+                    event_date: "TBA",
+                    event_time: "TBA",
+                    location: "School Grounds"
+                }
+            };
+
+            const event = eventData[id];
+            if (!event) {
+                console.error('Event not found for calendar:', id);
+                return;
+            }
+
+            // Since date is TBA, show a message instead of creating calendar file
+            if (event.event_date === "TBA") {
+                alert(`Calendar Reminder: ${event.title}\n\nDate and time will be announced soon. Please check the school website for updates.`);
+                return;
+            }
+
+            // Create a basic calendar file download (for future use when date is set)
+            const eventDate = new Date(event.event_date + 'T' + event.event_time);
+            const endDate = new Date(eventDate.getTime() + 60 * 60 * 1000); // Add 1 hour
+            
+            const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Makalanegama School//Events//EN
+BEGIN:VEVENT
+UID:${id}@makalanegamaschool.lk
+DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z
+DTSTART:${eventDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z
+DTEND:${endDate.toISOString().replace(/[-:]/g, '').split('.')[0]}Z
+SUMMARY:${event.title}
+LOCATION:${event.location}
+DESCRIPTION:Makalanegama School Event
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([icsContent], { type: 'text/calendar' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${event.title.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.ics`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+        
+        // Mini calendar functionality
+        function initializeMiniCalendar() {
+            const currentMonthElement = document.getElementById('current-month');
+            const prevButton = document.getElementById('prev-month');
+            const nextButton = document.getElementById('next-month');
+            const calendarGrid = document.querySelector('.calendar-grid');
+            
+            let currentDate = new Date();
+            
+            function renderCalendar() {
+                const year = currentDate.getFullYear();
+                const month = currentDate.getMonth();
+                
+                // Update header
+                const monthNames = [
+                    'January', 'February', 'March', 'April', 'May', 'June',
+                    'July', 'August', 'September', 'October', 'November', 'December'
+                ];
+                currentMonthElement.textContent = `${monthNames[month]} ${year}`;
+                
+                // Clear existing days (keep headers)
+                const existingDays = calendarGrid.querySelectorAll('.calendar-day:not(.header)');
+                existingDays.forEach(day => day.remove());
+                
+                // Get first day of month and number of days
+                const firstDay = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                
+                // Add empty cells for days before month starts
+                for (let i = 0; i < firstDay; i++) {
+                    const emptyDay = document.createElement('div');
+                    emptyDay.className = 'calendar-day empty';
+                    calendarGrid.appendChild(emptyDay);
+                }
+                
+                // Add days of the month
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const dayElement = document.createElement('div');
+                    dayElement.className = 'calendar-day';
+                    dayElement.textContent = day;
+                    
+                    // Mark event days (example: 25th, 15th, 10th)
+                    if ([25, 15, 10].includes(day)) {
+                        dayElement.classList.add('event-day');
+                        dayElement.title = 'Event scheduled on this day';
+                    }
+                    
+                    // Mark today
+                    const today = new Date();
+                    if (year === today.getFullYear() && 
+                        month === today.getMonth() && 
+                        day === today.getDate()) {
+                        dayElement.classList.add('today');
+                    }
+                    
+                    calendarGrid.appendChild(dayElement);
+                }
+            }
+            
+            // Navigation
+            prevButton.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() - 1);
+                renderCalendar();
+            });
+            
+            nextButton.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() + 1);
+                renderCalendar();
+            });
+            
+            // Initial render
+            renderCalendar();
+        }
+        
+        // Event subscription functionality
+        function initializeEventSubscription() {
+            const subscribeForm = document.getElementById('event-subscribe-form');
+            
+            subscribeForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = this.querySelector('input[type="email"]').value;
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                // Show loading state
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
+                submitBtn.disabled = true;
+                
+                // Simulate subscription process
+                setTimeout(() => {
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Subscribed!';
+                    submitBtn.classList.remove('btn-maroon');
+                    submitBtn.classList.add('btn-success');
+                    
+                    // Reset after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.classList.remove('btn-success');
+                        submitBtn.classList.add('btn-maroon');
+                        submitBtn.disabled = false;
+                        this.reset();
+                    }, 3000);
+                }, 2000);
+            });
+        }
+        
+        // Additional static functionality implemented above
+    </script>
+    
+    <style>
+        /* Additional CSS for Events Page */
+        .page-header {
+            background: linear-gradient(135deg, var(--maroon-primary) 0%, var(--maroon-dark) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 0 4rem;
+            margin-top: 76px; /* Account for fixed navbar */
+        }
+        
+        /* Force event visibility */
+        .events-container {
+            display: block !important;
+            width: 100% !important;
+            visibility: visible !important;
+        }
+        
+        .event-item {
+            display: flex !important;
+            width: 100% !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            margin-bottom: 3rem;
+            background: var(--white);
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow-light);
+            overflow: hidden;
+            transition: var(--transition-medium);
+            border: 1px solid #e5e7eb;
+        }
+
+        .event-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--maroon-primary);
+        }
+
+        .event-date {
+            width: 120px;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, var(--maroon-primary) 0%, var(--maroon-dark) 100%);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1.5rem 1rem;
+        }
+
+        .event-date .date-number {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .event-date .date-month {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.25rem;
+        }
+
+        .event-date .date-year {
+            font-size: 0.75rem;
+            opacity: 0.9;
+        }
+
+        .event-content {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .event-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .event-category {
+            background: var(--light-gray);
+            color: var(--maroon-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .event-category.academic {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .event-category.parent-meeting {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
+        .event-category.cultural {
+            background: #f3e8ff;
+            color: #7c3aed;
+        }
+
+        .event-time {
+            color: var(--medium-gray);
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .event-featured {
+            background: var(--gold-accent);
+            color: var(--maroon-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .event-title {
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .event-description {
+            color: var(--medium-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .event-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .event-location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--medium-gray);
+            font-size: 0.875rem;
+        }
+
+        .event-location i {
+            color: var(--maroon-primary);
+        }
+
+        .event-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .no-more-events {
+            background: var(--white);
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow-light);
+            padding: 3rem 2rem;
+            margin-top: 2rem;
+        }
+
+        .no-events-icon {
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design for Events */
+        @media (max-width: 768px) {
+            .event-item {
+                flex-direction: column;
+                margin-bottom: 2rem;
+            }
+            
+            .event-date {
+                width: 100%;
+                flex-direction: row;
+                justify-content: center;
+                padding: 1rem;
+                gap: 1rem;
+            }
+            
+            .event-date .date-number {
+                font-size: 1.5rem;
+                margin-bottom: 0;
+            }
+            
+            .event-date .date-month {
+                margin-bottom: 0;
+            }
+            
+            .event-content {
+                padding: 1.5rem;
+            }
+            
+            .event-title {
+                font-size: 1.25rem;
+            }
+            
+            .event-details {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .event-actions {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .event-actions .btn {
+                flex: 1;
+                text-align: center;
+            }
+        }
+        
+        .event-card {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .timeline-date {
+            width: 100px;
+            flex-shrink: 0;
+            margin-right: 2rem;
+        }
+        
+        .date-circle {
+            width: 80px;
+            height: 80px;
+            background: var(--maroon-primary);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .date-number {
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        
+        .date-month {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .event-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+            border-color: #800020;
+        }
+        
+        .event-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+        }
+        
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .event-card:hover .event-image img {
+            transform: scale(1.05);
+        }
+        
+        /* Fallback styling when image fails to load */
+        .event-image.fallback {
+            background: linear-gradient(135deg, #800020 0%, #a0002a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .event-image.fallback::before {
+            content: '\f073';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 3rem;
+        }
+        
+        .event-image.fallback img {
+            display: none;
+        }
+        
+        .event-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+        
+        .event-category.sports { background: #3b82f6; }
+        .event-category.academic { background: #22c55e; }
+        .event-category.cultural { background: #f59e0b; }
+        .event-category.parent { background: var(--maroon-primary); }
+        .event-category.parent-meeting { background: var(--maroon-primary); }
+        .event-category.workshop { background: #8b5cf6; }
+        .event-category.examination { background: #ef4444; }
+        .event-category.holiday { background: #6b7280; }
+        .event-category.competition { background: #3b82f6; }
+        .event-category.meeting { background: var(--maroon-primary); }
+        .event-category.general { background: #6b7280; }
+        .event-category.default { background: var(--maroon-primary); }
+        
+        .featured-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gold-accent);
+            color: var(--black);
+            padding: 0.25rem 0.5rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .event-details {
+            padding: 1.5rem;
+        }
+        
+        .event-title {
+            color: #1f2937;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .event-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        
+        .meta-item i {
+            color: #800020;
+            width: 16px;
+            text-align: center;
+        }
+        
+        .event-description {
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .event-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        
+        .event-actions .btn {
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+        
+        .widget {
+            background: var(--white);
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow-light);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        
+        .widget-header {
+            background: var(--cream-background);
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(128, 0, 32, 0.1);
+        }
+        
+        .widget-header h5 {
+            margin: 0;
+            color: var(--maroon-primary);
+            font-weight: 600;
+        }
+        
+        .widget-content {
+            padding: 1.5rem;
+        }
+        
+        .mini-calendar .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.25rem;
+        }
+        
+        .mini-calendar .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-small);
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+        
+        .mini-calendar .calendar-day.header {
+            background: var(--cream-background);
+            color: var(--maroon-primary);
+            font-weight: 600;
+            cursor: default;
+        }
+        
+        .mini-calendar .calendar-day:not(.header):not(.empty):hover {
+            background: var(--cream-background);
+            color: var(--maroon-primary);
+        }
+        
+        .mini-calendar .calendar-day.event-day {
+            background: var(--maroon-primary);
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .mini-calendar .calendar-day.today {
+            background: var(--gold-accent);
+            color: var(--black);
+            font-weight: 600;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--cream-background);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .info-icon i {
+            color: var(--maroon-primary);
+            font-size: 1.125rem;
+        }
+        
+        .info-content h6 {
+            color: var(--black);
+            margin-bottom: 0.25rem;
+        }
+        
+        .info-content p {
+            color: var(--medium-gray);
+            margin: 0;
+            font-size: 0.875rem;
+        }
+        
+        .category-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .category-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-list a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem;
+            color: var(--medium-gray);
+            text-decoration: none;
+            border-radius: var(--radius-small);
+            transition: var(--transition-fast);
+        }
+        
+        .category-list a:hover {
+            background: var(--cream-background);
+            color: var(--maroon-primary);
+        }
+        
+        .category-list .count {
+            background: var(--cream-background);
+            color: var(--maroon-primary);
+            padding: 0.25rem 0.5rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .cta-features {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--medium-gray);
+        }
+        
+        .feature-item i {
+            color: var(--maroon-primary);
+        }
+        
+        .toast-message {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: var(--success);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-medium);
+            box-shadow: var(--shadow-medium);
+            z-index: 9999;
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 6rem 0 3rem;
+                margin-top: 70px;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 2rem;
+            }
+            
+            .timeline-date {
+                margin-right: 0;
+                margin-bottom: 1rem;
+                align-self: center;
+            }
+            
+            .date-circle {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .timeline-content {
+                width: 100%;
+            }
+            
+            .event-image {
+                height: 180px;
+            }
+            
+            .event-meta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .event-actions {
+                flex-direction: column;
+            }
+            
+            .event-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .event-details {
+                padding: 1.25rem;
+            }
+            
+            .event-title {
+                font-size: 1.1rem;
+            }
+            
+            .event-description {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Static events - no dynamic loading needed
+        function loadEvents() {
+            console.log('Static events already loaded in HTML');
+            // Events are now static HTML content, no dynamic loading required
+        }
+        
+        // Initialize calendar
+        function initMiniCalendar() {
+            const calendar = document.getElementById('mini-calendar');
+            const currentMonth = document.getElementById('current-month');
+            const prevBtn = document.getElementById('prev-month');
+            const nextBtn = document.getElementById('next-month');
+            
+            let date = new Date();
+            
+            function renderCalendar() {
+                const year = date.getFullYear();
+                const month = date.getMonth();
+                
+                currentMonth.textContent = date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+                
+                // Basic calendar grid (simplified)
+                const calendarGrid = calendar.querySelector('.calendar-grid') || document.createElement('div');
+                calendarGrid.className = 'calendar-grid';
+                calendarGrid.innerHTML = '';
+                
+                // Day headers
+                const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+                days.forEach(day => {
+                    const dayElement = document.createElement('div');
+                    dayElement.className = 'calendar-day header';
+                    dayElement.textContent = day;
+                    calendarGrid.appendChild(dayElement);
+                });
+                
+                // Calendar days (simplified)
+                const firstDay = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                
+                // Empty cells
+                for (let i = 0; i < firstDay; i++) {
+                    const emptyDay = document.createElement('div');
+                    emptyDay.className = 'calendar-day empty';
+                    calendarGrid.appendChild(emptyDay);
+                }
+                
+                // Month days
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const dayElement = document.createElement('div');
+                    dayElement.className = 'calendar-day';
+                    dayElement.textContent = day;
+                    
+                    // Highlight today
+                    const today = new Date();
+                    if (year === today.getFullYear() && month === today.getMonth() && day === today.getDate()) {
+                        dayElement.classList.add('today');
+                    }
+                    
+                    calendarGrid.appendChild(dayElement);
+                }
+                
+                if (!calendar.querySelector('.calendar-grid')) {
+                    calendar.appendChild(calendarGrid);
+                }
+            }
+            
+            prevBtn?.addEventListener('click', () => {
+                date.setMonth(date.getMonth() - 1);
+                renderCalendar();
+            });
+            
+            nextBtn?.addEventListener('click', () => {
+                date.setMonth(date.getMonth() + 1);
+                renderCalendar();
+            });
+            
+            renderCalendar();
+        }
+        
+        // Initialize when page loads - static version
+        document.addEventListener('DOMContentLoaded', function() {
+            loadEvents(); // Now just logs a message, doesn't break anything
+            initMiniCalendar();
+            fixNavigationLinks();
+        });
+
+        // Fix navigation link issues
+        function fixNavigationLinks() {
+            // Ensure Events link works properly
+            const eventsLinks = document.querySelectorAll('a[href="events.html"]');
+            eventsLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Don't prevent default - let the link work normally
+                    console.log('Events link clicked');
+                });
+            });
+
+            // Fix dropdown behavior to not interfere with other links
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    // Only handle dropdown behavior, don't interfere with other links
+                    e.stopPropagation();
+                });
+            });
+
+            // Ensure only About dropdown triggers dropdown behavior
+            const aboutDropdown = document.querySelector('.nav-item.dropdown .dropdown-toggle');
+            if (aboutDropdown) {
+                aboutDropdown.addEventListener('click', function(e) {
+                    // Let Bootstrap handle the dropdown
+                    const isBootstrapHandled = this.getAttribute('data-bs-toggle') === 'dropdown';
+                    if (!isBootstrapHandled) {
+                        e.preventDefault();
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Updates - Makalanegama School</title>
+    <meta name="description" content="Stay updated with the latest news, announcements, and updates from Makalanegama School. Read about school activities, achievements, and important information.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="News & Updates - Makalanegama School">
+    <meta property="og:description" content="Latest news, announcements, and updates from Makalanegama School">
+    <meta property="og:image" content="assets/images/news/news-hero.jpg">
+    <meta property="og:url" content="https://makalanegamaschool.lk/news.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Sinhala:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    
+    
+    <style>
+        /* News Page Specific Styles */
+        :root {
+            --maroon-primary: #800020;
+            --maroon-dark: #5d0017;
+            --maroon-light: #a6334f;
+            --gold-accent: #ffd700;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --dark-gray: #334155;
+            --black: #1a1a1a;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --info: #3b82f6;
+            --danger: #ef4444;
+            --cream-background: #faf7f0;
+            
+            --font-primary: 'Inter', 'Noto Sans Sinhala', sans-serif;
+            --font-sinhala: 'Noto Sans Sinhala', sans-serif;
+            
+            --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-heavy: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            
+            --radius-small: 8px;
+            --radius-medium: 12px;
+            --radius-large: 20px;
+            
+            --transition-fast: 0.2s ease-out;
+            --transition-medium: 0.3s ease-out;
+            --transition-slow: 0.5s ease-out;
+        }
+
+        /* Navigation */
+        .custom-navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(128, 0, 32, 0.1);
+            padding: 1rem 0;
+            transition: var(--transition-medium);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .navbar-brand .logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        .school-name .primary-name {
+            display: block;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--maroon-primary);
+            line-height: 1.2;
+        }
+
+        .school-name .secondary-name {
+            display: block;
+            font-family: var(--font-sinhala);
+            font-size: 0.875rem;
+            color: var(--medium-gray);
+            line-height: 1.2;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: var(--dark-gray);
+            padding: 0.5rem 1rem;
+            position: relative;
+            transition: var(--transition-fast);
+        }
+
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link:hover {
+            color: var(--maroon-primary);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--maroon-primary) 0%, var(--maroon-dark) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 0 4rem;
+            margin-top: 76px;
+        }
+
+        .header-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .header-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+
+        /* Stylish Filter Buttons */
+        .filter-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-bottom: 3px solid var(--maroon-primary);
+        }
+
+        .filter-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px 0;
+        }
+
+        .filter-btn {
+            background: var(--white);
+            border: 2px solid var(--light-gray);
+            color: var(--dark-gray);
+            padding: 12px 24px;
+            border-radius: var(--radius-medium);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all var(--transition-medium);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            min-width: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .filter-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left var(--transition-slow);
+        }
+
+        .filter-btn:hover:before {
+            left: 100%;
+        }
+
+        .filter-btn i {
+            font-size: 16px;
+            transition: transform var(--transition-medium);
+        }
+
+        .filter-btn:hover {
+            background: var(--maroon-primary);
+            color: var(--white);
+            border-color: var(--maroon-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .filter-btn:hover i {
+            transform: scale(1.1);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--maroon-primary) 0%, var(--maroon-dark) 100%);
+            color: var(--white);
+            border-color: var(--maroon-primary);
+            box-shadow: var(--shadow-heavy);
+            transform: translateY(-1px);
+        }
+
+        .filter-btn.active i {
+            color: var(--gold-accent);
+            transform: scale(1.05);
+        }
+
+        .filter-btn:active {
+            transform: translateY(0);
+            box-shadow: var(--shadow-light);
+        }
+
+        /* Responsive Design for Filter Buttons */
+        @media (max-width: 768px) {
+            .filter-tabs {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 10px 16px;
+                font-size: 12px;
+                min-width: 110px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .filter-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        /* Enhanced Filter Button Icons */
+        .filter-btn[data-filter="all"] i { color: var(--info); }
+        .filter-btn[data-filter="academic"] i { color: var(--success); }
+        .filter-btn[data-filter="facilities"] i { color: var(--warning); }
+        .filter-btn[data-filter="events"] i { color: #8b5cf6; }
+        .filter-btn[data-filter="admissions"] i { color: #06b6d4; }
+
+        .filter-btn:hover i,
+        .filter-btn.active i {
+            color: var(--gold-accent) !important;
+        }
+
+        /* Search Box Enhancement */
+        .search-box .input-group {
+            border-radius: var(--radius-medium);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+        }
+
+        .search-box .form-control {
+            border: 2px solid var(--light-gray);
+            border-right: none;
+            padding: 12px 16px;
+            font-size: 14px;
+            background: var(--white);
+            transition: all var(--transition-medium);
+        }
+
+        .search-box .form-control:focus {
+            border-color: var(--maroon-primary);
+            box-shadow: 0 0 0 0.2rem rgba(128, 0, 32, 0.1);
+            background: var(--white);
+        }
+
+        .search-box .btn {
+            background: var(--maroon-primary);
+            border: 2px solid var(--maroon-primary);
+            color: var(--white);
+            padding: 12px 20px;
+            transition: all var(--transition-medium);
+        }
+
+        .search-box .btn:hover {
+            background: var(--maroon-dark);
+            border-color: var(--maroon-dark);
+            transform: translateY(-1px);
+        }
+
+        /* No News Message Styling */
+        .no-news-message {
+            background: var(--white);
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow-light);
+            padding: 4rem 2rem;
+            margin: 2rem 0;
+            border: 2px dashed #e5e7eb;
+            transition: var(--transition-medium);
+        }
+
+        .no-news-message:hover {
+            border-color: var(--maroon-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .no-news-icon {
+            margin-bottom: 1.5rem;
+        }
+
+        .no-news-message h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--medium-gray);
+        }
+
+        .no-news-message p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--medium-gray);
+            max-width: 500px;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .no-news-message {
+                padding: 3rem 1.5rem;
+            }
+            
+            .no-news-message .fa-4x {
+                font-size: 3rem !important;
+            }
+            
+            .no-news-message h4 {
+                font-size: 1.5rem;
+            }
+            
+            .no-news-message p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo/logo.png" alt="Makalanegama School" class="logo">
+                <span class="school-name">
+                    <span class="primary-name">Makalanegama School</span>
+                    <span class="secondary-name">මාකලනේගම විද්‍යාලය</span>
+                </span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                            <li><a class="dropdown-item" href="curriculum.html">Curriculum</a></li>
+                            <li><a class="dropdown-item" href="student-life.html">Student Life</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teachers.html">Teachers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="achievements.html">Achievements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="news.html">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admissions.html">Admissions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="header-background">
+            <div class="header-overlay"></div>
+            <div class="header-pattern"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="header-content">
+                        <nav aria-label="breadcrumb" data-aos="fade-up">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active">News & Updates</li>
+                            </ol>
+                        </nav>
+                        
+                        <h1 class="page-title" data-aos="fade-up" data-aos-delay="200">
+                            School <span style="color: var(--gold-accent);">News & Updates</span>
+                        </h1>
+                        
+                        <h2 class="page-subtitle-sinhala" data-aos="fade-up" data-aos-delay="300">
+                            පාසල් ප්‍රවෘත්ති සහ යාවත්කාලීන කිරීම්
+                        </h2>
+                        
+                        <p class="page-description" data-aos="fade-up" data-aos-delay="400">
+                            Stay informed with the latest news, announcements, and updates from Makalanegama Vidyalaya. 
+                            Get insights into school activities, achievements, and important information for our community.
+                        </p>
+                        
+                        <div class="page-stats" data-aos="fade-up" data-aos-delay="500">
+                            <div class="stat-item">
+                                <div class="stat-number" id="total-news">0</div>
+                                <div class="stat-label">News Articles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="featured-news">0</div>
+                                <div class="stat-label">Featured</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="news-categories">0</div>
+                                <div class="stat-label">Categories</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-left" data-aos-delay="600">
+                    <div class="header-visual">
+                        <img src="assets/images/news/news-hero.jpg" alt="School News" class="img-fluid rounded">
+                        <div class="visual-overlay">
+                            <div class="overlay-badge">
+                                <i class="fas fa-newspaper"></i>
+                                <span>Latest Updates</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="filter-section py-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="search-box" data-aos="fade-right">
+                        <div class="input-group">
+                            <input type="text" id="news-search" class="form-control" placeholder="Search news articles...">
+                            <button class="btn btn-maroon" type="button" id="search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="filter-tabs" data-aos="fade-left">
+                        <button class="filter-btn active" data-filter="all">
+                            <i class="fas fa-list"></i>
+                            All News
+                        </button>
+                        <button class="filter-btn" data-filter="academic">
+                            <i class="fas fa-graduation-cap"></i>
+                            Academic
+                        </button>
+                        <button class="filter-btn" data-filter="facilities">
+                            <i class="fas fa-building"></i>
+                            Facilities
+                        </button>
+                        <button class="filter-btn" data-filter="events">
+                            <i class="fas fa-calendar"></i>
+                            Events
+                        </button>
+                        <button class="filter-btn" data-filter="admissions">
+                            <i class="fas fa-user-plus"></i>
+                            Admissions
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured News Section -->
+    <section class="featured-news-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <div class="section-badge">
+                    Featured Stories
+                </div>
+                <h2 class="section-title">
+                    Top <span class="text-maroon">Headlines</span>
+                </h2>
+                <p class="section-description">
+                    Stay updated with our most important news and announcements
+                </p>
+            </div>
+            
+            <div class="row g-4" id="featured-news">
+                <!-- No featured news message -->
+                <div class="col-12">
+                    <div class="no-news-message text-center py-5">
+                        <div class="no-news-icon">
+                            <i class="fas fa-newspaper fa-4x text-muted mb-3"></i>
+                        </div>
+                        <h4 class="text-muted">No Featured News Yet</h4>
+                        <p class="text-muted">We'll post important school news and announcements here. Stay tuned!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News Grid -->
+    <section class="news-grid-section py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">
+                    Latest <span class="text-maroon">News</span>
+                </h2>
+                <p class="section-description">
+                    Discover what's happening at Makalanegama School
+                </p>
+            </div>
+            
+            <div class="row g-4" id="news-grid">
+                <!-- No news message -->
+                <div class="col-12">
+                    <div class="no-news-message text-center py-5">
+                        <div class="no-news-icon">
+                            <i class="fas fa-newspaper fa-4x text-muted mb-3"></i>
+                        </div>
+                        <h4 class="text-muted">No News Articles Yet</h4>
+                        <p class="text-muted">Our news section is coming soon! We'll share exciting updates about school activities, achievements, and important announcements here.</p>
+                        <div class="mt-4">
+                            <a href="index.html" class="btn btn-maroon">
+                                <i class="fas fa-home"></i> Back to Home
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-5" data-aos="fade-up">
+                <button id="load-more-news" class="btn btn-outline-maroon btn-lg">
+                    <i class="fas fa-plus"></i>
+                    Load More Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <section class="newsletter-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="newsletter-content">
+                        <h2>Stay Updated with School News</h2>
+                        <p>Subscribe to our newsletter to receive the latest news, announcements, and updates directly in your email inbox.</p>
+                        <div class="newsletter-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Weekly news digest</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Important announcements</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Event notifications</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="newsletter-form">
+                        <form id="newsletter-form">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email Address" required>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="newsletter-consent" required>
+                                <label class="form-check-label" for="newsletter-consent">
+                                    I agree to receive newsletters and updates from Makalanegama School
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-maroon btn-lg w-100">
+                                <i class="fas fa-envelope"></i>
+                                Subscribe to Newsletter
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Modal -->
+    <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newsModalLabel">News Article</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="newsModalBody">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+                <div class="modal-footer">
+                    <div class="share-buttons">
+                        <span>Share this article:</span>
+                        <a href="#" class="btn btn-outline-primary btn-sm" id="share-facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-info btn-sm" id="share-twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-success btn-sm" id="share-whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="footer-brand">
+                            <img src="assets/images/logo/logo-white.png" alt="Makalanegama School" class="footer-logo">
+                            <h4>Makalanegama School</h4>
+                            <p class="footer-tagline">Excellence in Education Since 1888</p>
+                            <p>Nurturing young minds with wisdom, virtue, and excellence in the heart of Galgamuwa, North Western Province.</p>
+                            
+                            <div class="social-links">
+                                <a href="https://web.facebook.com/people/Makalanegama-kv/100063734032649/" target="_blank" class="social-link">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-links">
+                            <h5>Quick Links</h5>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="teachers.html">Our Teachers</a></li>
+                                <li><a href="curriculum.html">Curriculum</a></li>
+                                <li><a href="student-life.html">Student Life</a></li>
+                                <li><a href="admissions.html">Admissions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-links">
+                            <h5>Information</h5>
+                            <ul>
+                                <li><a href="achievements.html">Achievements</a></li>
+                                <li><a href="events.html">Events</a></li>
+                                <li><a href="news.html">News</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="footer-contact">
+                            <h5>Contact Information</h5>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Address:</strong><br>
+                                    X8X5+VGH, Galgamuwa-Nikawewa Rd,<br>
+                                    Galgamuwa, North Western Province,<br>
+                                    Sri Lanka
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone:</strong><br>
+                                    <a href="tel:+94372053619">+94 37 205 3619</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email:</strong><br>
+                                    <a href="mailto:info@makalanegamaschool.lk">info@makalanegamaschool.lk</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>School Hours:</strong><br>
+                                    Monday - Friday: 7:30 AM - 1:30 PM
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>&copy; 2024 Makalanegama School. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p>Designed with ❤️ for educational excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/telegram-api.js"></script>
+    <!-- Dynamic news loading script removed - using static implementation --></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Static news page initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeStaticNews();
+        });
+
+        // Initialize static news page
+        function initializeStaticNews() {
+            // Hide load more button since no news to load
+            const loadMoreBtn = document.getElementById('load-more-news');
+            if (loadMoreBtn) {
+                loadMoreBtn.style.display = 'none';
+            }
+
+            // Ensure statistics remain at 0
+            const totalNewsEl = document.getElementById('total-news');
+            const featuredNewsEl = document.getElementById('featured-news');
+            const newsCategoriesEl = document.getElementById('news-categories');
+
+            if (totalNewsEl) totalNewsEl.textContent = '0';
+            if (featuredNewsEl) featuredNewsEl.textContent = '0';
+            if (newsCategoriesEl) newsCategoriesEl.textContent = '0';
+
+            console.log('Static news page initialized - no news content available');
+        }
+    </script>
+</body>
+</html>

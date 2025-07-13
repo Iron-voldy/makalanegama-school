@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Life - Makalanegama School</title>
+    <meta name="description" content="Discover vibrant student life at Makalanegama School with clubs, sports, cultural activities, and academic programs that foster holistic development.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Student Life - Makalanegama School">
+    <meta property="og:description" content="Vibrant student life with diverse activities, clubs, and programs for holistic development">
+    <meta property="og:image" content="assets/images/student-life/student-life-hero.jpg">
+    <meta property="og:url" content="https://makalanegamaschool.lk/student-life.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Sinhala:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    
+    <style>
+        /* Navigation Enhancement for Student Life Page */
+        :root {
+            --font-primary: 'Inter', 'Noto Sans Sinhala', sans-serif;
+            --font-sinhala: 'Noto Sans Sinhala', sans-serif;
+            --maroon-primary: #800020;
+            --maroon-dark: #5d0017;
+            --gold-accent: #ffd700;
+            --white: #ffffff;
+            --medium-gray: #64748b;
+            --dark-gray: #334155;
+            --transition-fast: 0.2s ease-out;
+            --transition-medium: 0.3s ease-out;
+        }
+
+        /* Navigation */
+        .custom-navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(128, 0, 32, 0.1);
+            padding: 1rem 0;
+            transition: var(--transition-medium);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .navbar-brand .logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        .school-name .primary-name {
+            display: block;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--maroon-primary);
+            line-height: 1.2;
+        }
+
+        .school-name .secondary-name {
+            display: block;
+            font-family: var(--font-sinhala);
+            font-size: 0.875rem;
+            color: var(--medium-gray);
+            line-height: 1.2;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: var(--dark-gray);
+            padding: 0.5rem 1rem;
+            position: relative;
+            transition: var(--transition-fast);
+        }
+
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link:hover {
+            color: var(--maroon-primary);
+        }
+
+        /* Mobile Responsive Navigation Fixes */
+        @media (max-width: 991.98px) {
+            /* Prevent horizontal overflow */
+            html, body {
+                overflow-x: hidden !important;
+                width: 100% !important;
+                max-width: 100vw !important;
+            }
+            
+            /* Navbar container fixes */
+            .custom-navbar {
+                width: 100% !important;
+                overflow: hidden !important;
+                padding: 0.5rem 0 !important;
+                position: relative !important;
+            }
+            
+            .custom-navbar .container {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 0 1rem !important;
+                margin: 0 !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                position: relative !important;
+            }
+            
+            /* Navbar brand - limit width strictly */
+            .navbar-brand {
+                flex: 0 1 auto !important;
+                max-width: calc(100vw - 60px) !important;
+                min-width: 0 !important;
+                overflow: hidden !important;
+                margin-right: 0 !important;
+                display: flex !important;
+                align-items: center !important;
+                gap: 0.5rem !important;
+            }
+            
+            .navbar-brand .school-name {
+                flex: 1 !important;
+                min-width: 0 !important;
+                overflow: hidden !important;
+                max-width: calc(100vw - 120px) !important;
+            }
+            
+            .navbar-brand .school-name .primary-name,
+            .navbar-brand .school-name .secondary-name {
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+                display: block !important;
+            }
+            
+            .navbar-brand .logo {
+                flex-shrink: 0 !important;
+                width: 35px !important;
+                height: 35px !important;
+            }
+            
+            /* Toggle button - FIXED POSITIONING */
+            .navbar-toggler {
+                position: absolute !important;
+                top: 50% !important;
+                right: 1rem !important;
+                transform: translateY(-50%) !important;
+                width: 44px !important;
+                height: 44px !important;
+                padding: 0 !important;
+                border: 2px solid var(--maroon-primary) !important;
+                border-radius: 6px !important;
+                background: var(--white) !important;
+                z-index: 1050 !important;
+                flex-shrink: 0 !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            .navbar-toggler:focus {
+                box-shadow: 0 0 0 0.2rem rgba(128, 0, 32, 0.25) !important;
+            }
+            
+            .navbar-toggler-icon {
+                width: 20px !important;
+                height: 20px !important;
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23800020' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+            }
+        }
+
+        /* Smaller mobile devices */
+        @media (max-width: 576px) {
+            .navbar-brand .school-name .primary-name {
+                font-size: 1rem !important;
+            }
+            
+            .navbar-brand .school-name .secondary-name {
+                font-size: 0.75rem !important;
+            }
+            
+            .navbar-brand .logo {
+                width: 30px !important;
+                height: 30px !important;
+            }
+            
+            .navbar-toggler {
+                top: 15px !important;
+                right: 10px !important;
+                width: 42px !important;
+                height: 42px !important;
+            }
+        }
+        
+        /* Very small devices */
+        @media (max-width: 360px) {
+            .navbar-brand {
+                max-width: calc(100vw - 55px) !important;
+            }
+            
+            .navbar-brand .school-name {
+                max-width: calc(100vw - 100px) !important;
+            }
+            
+            .navbar-brand .school-name .primary-name {
+                font-size: 0.875rem !important;
+            }
+            
+            .navbar-brand .school-name .secondary-name {
+                font-size: 0.65rem !important;
+            }
+            
+            .navbar-brand .logo {
+                width: 28px !important;
+                height: 28px !important;
+            }
+            
+            .navbar-toggler {
+                top: 12px !important;
+                right: 8px !important;
+                width: 40px !important;
+                height: 40px !important;
+            }
+        }
+    </style>
+    
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo/logo.png" alt="Makalanegama School" class="logo">
+                <span class="school-name">
+                    <span class="primary-name">Makalanegama School</span>
+                    <span class="secondary-name">මාකලනේගම විද්‍යාලය</span>
+                </span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                            <li><a class="dropdown-item" href="curriculum.html">Curriculum</a></li>
+                            <li><a class="dropdown-item active" href="student-life.html">Student Life</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teachers.html">Teachers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="achievements.html">Achievements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admissions.html">Admissions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="header-background">
+            <div class="header-overlay"></div>
+            <div class="header-pattern"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row align-items-center min-vh-50">
+                <div class="col-lg-8">
+                    <div class="header-content">
+                        <nav aria-label="breadcrumb" data-aos="fade-up">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="about.html">About</a></li>
+                                <li class="breadcrumb-item active">Student Life</li>
+                            </ol>
+                        </nav>
+                        
+                        <h1 class="page-title" data-aos="fade-up" data-aos-delay="200">
+                            Vibrant <span class="text-maroon">Student Life</span>
+                        </h1>
+                        
+                        <h2 class="page-subtitle-sinhala" data-aos="fade-up" data-aos-delay="300">
+                            ජීවමත් ශිෂ්‍ය ජීවිතය
+                        </h2>
+                        
+                        <p class="page-description" data-aos="fade-up" data-aos-delay="400">
+                            Experience the rich tapestry of student life at Makalanegama School, where learning extends 
+                            beyond the classroom through diverse activities, clubs, and programs that nurture holistic development.
+                        </p>
+                        
+                        <div class="page-stats" data-aos="fade-up" data-aos-delay="500">
+                            <div class="stat-item">
+                                <div class="stat-number">7</div>
+                                <div class="stat-label">Clubs & Activities</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">3</div>
+                                <div class="stat-label">Sports Teams</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">25+</div>
+                                <div class="stat-label">Annual Events</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-left" data-aos-delay="600">
+                    <div class="header-visual">
+                        <img src="assets/images/student-life/student-life-hero.jpg" alt="Student Life" class="img-fluid rounded">
+                        <div class="visual-overlay">
+                            <div class="overlay-badge">
+                                <i class="fas fa-users"></i>
+                                <span>Holistic Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activity Categories -->
+    <section class="activity-categories py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <div class="section-badge">
+                    Explore Activities
+                </div>
+                <h2 class="section-title">
+                    Diverse <span class="text-maroon">Opportunities</span>
+                </h2>
+                <p class="section-description">
+                    From academic clubs to sports teams, discover the many ways students can grow and excel
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="activity-category-card" data-category="academic">
+                        <div class="category-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h4>Academic Clubs</h4>
+                        <p>Computer Club focusing on programming and technology</p>
+                        <div class="category-count">1 Club</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="activity-category-card" data-category="sports">
+                        <div class="category-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h4>Sports & Athletics</h4>
+                        <p>Cricket, Athletics, and Elle sports teams</p>
+                        <div class="category-count">3 Teams</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="activity-category-card" data-category="cultural">
+                        <div class="category-icon">
+                            <i class="fas fa-masks-theater"></i>
+                        </div>
+                        <h4>Cultural Arts</h4>
+                        <p>Traditional Dance, Music, and School Band</p>
+                        <div class="category-count">3 Groups</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="activity-category-card" data-category="environmental">
+                        <div class="category-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h4>Environmental</h4>
+                        <p>Gardening, Tree Planting, and Sustainability Projects</p>
+                        <div class="category-count">5 Projects</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Clubs Section -->
+    <section class="academic-clubs py-5" id="academic">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <div class="section-badge">
+                    Academic Excellence
+                </div>
+                <h2 class="section-title">
+                    Academic <span class="text-maroon">Clubs & Societies</span>
+                </h2>
+                <p class="section-description">
+                    Fostering intellectual curiosity and academic excellence through specialized clubs
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="club-featured-card">
+                        <div class="club-image">
+                            <img src="assets/images/student-life/computer-club.jpg" alt="Computer Club" class="img-fluid">
+                            <div class="club-badge">Featured</div>
+                        </div>
+                        <div class="club-content">
+                            <h3>Computer Club</h3>
+                            <p>Exploring the world of technology through programming, digital literacy, and technology projects. Students learn coding, develop websites, and participate in technology competitions.</p>
+                            <div class="club-features">
+                                <span class="feature-tag"><i class="fas fa-laptop-code"></i> Programming</span>
+                                <span class="feature-tag"><i class="fas fa-globe"></i> Web Development</span>
+                                <span class="feature-tag"><i class="fas fa-trophy"></i> Tech Competitions</span>
+                            </div>
+                            <div class="club-stats">
+                                <div class="stat">
+                                    <span class="number">30</span>
+                                    <span class="label">Members</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="number">8</span>
+                                    <span class="label">Projects/Year</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="clubs-list">
+                        <div class="club-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="club-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="club-info">
+                                <h5>Computer Club</h5>
+                                <p>Programming, digital literacy, and technology projects</p>
+                                <span class="members-count">30 Members</span>
+                            </div>
+                        </div>
+                        
+                        <div class="club-description" data-aos="fade-up" data-aos-delay="200">
+                            <h5>Club Activities</h5>
+                            <ul>
+                                <li>Programming workshops and tutorials</li>
+                                <li>Website development projects</li>
+                                <li>Computer literacy training</li>
+                                <li>Technology competitions</li>
+                                <li>Digital art and design</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="club-achievements" data-aos="fade-up" data-aos-delay="300">
+                            <h5>Recent Achievements</h5>
+                            <ul>
+                                <li>Developed school website</li>
+                                <li>Won inter-school coding competition</li>
+                                <li>Organized digital literacy workshops</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports & Athletics Section -->
+    <section class="sports-athletics py-5 bg-light" id="sports">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <div class="section-badge">
+                    Physical Excellence
+                </div>
+                <h2 class="section-title">
+                    Sports & <span class="text-maroon">Athletics</span>
+                </h2>
+                <p class="section-description">
+                    Building character, teamwork, and physical fitness through competitive sports
+                </p>
+            </div>
+            
+            <div class="sports-grid">
+                <div class="row g-4">
+                    <div class="col-lg-8" data-aos="fade-right">
+                        <div class="sports-highlight">
+                            <div class="sports-image">
+                                <img src="assets/images/student-life/cricket-team.jpg" alt="Cricket Team" class="img-fluid rounded">
+                                <div class="sports-overlay">
+                                    <div class="achievement-badge">
+                                        <i class="fas fa-trophy"></i>
+                                        <span>Zonal Champions 2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sports-content">
+                                <h3>Cricket Team Excellence</h3>
+                                <p>Our cricket team has consistently performed at the highest level, winning the zonal championship and representing the region in provincial competitions. The team focuses on developing both technical skills and sportsmanship.</p>
+                                <div class="sports-achievements">
+                                    <div class="achievement">
+                                        <i class="fas fa-medal"></i>
+                                        <span>Zonal Champions 2023</span>
+                                    </div>
+                                    <div class="achievement">
+                                        <i class="fas fa-star"></i>
+                                        <span>Provincial Runners-up 2022</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4" data-aos="fade-left">
+                        <div class="sports-list">
+                            <div class="sport-item">
+                                <div class="sport-icon">
+                                    <i class="fas fa-running"></i>
+                                </div>
+                                <div class="sport-info">
+                                    <h5>Athletics</h5>
+                                    <p>Track and field events</p>
+                                    <span class="team-size">25 Athletes</span>
+                                </div>
+                            </div>
+                            
+                            <div class="sport-item">
+                                <div class="sport-icon">
+                                    <i class="fas fa-volleyball-ball"></i>
+                                </div>
+                                <div class="sport-info">
+                                    <h5>Elle</h5>
+                                    <p>Traditional Sri Lankan sport</p>
+                                    <span class="team-size">15 Players</span>
+                                </div>
+                            </div>
+                            
+                            <div class="sport-achievements">
+                                <h5>Sports Achievements</h5>
+                                <ul>
+                                    <li>Cricket - Zonal Champions 2023</li>
+                                    <li>Athletics - Provincial participation</li>
+                                    <li>Elle - Regional competitions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Arts Section -->
+    <section class="cultural-arts py-5" id="cultural">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <div class="section-badge">
+                    Cultural Heritage
+                </div>
+                <h2 class="section-title">
+                    Cultural <span class="text-maroon">Arts & Performance</span>
+                </h2>
+                <p class="section-description">
+                    Preserving Sri Lankan culture while fostering artistic expression and creativity
+                </p>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="cultural-content">
+                        <h3>Traditional Dance & Music</h3>
+                        <p>Our students learn and perform traditional Sri Lankan dances including Kandyan, Sabaragamuwa, and folk dances. The school maintains a strong connection to cultural heritage while encouraging creative expression.</p>
+                        
+                        <div class="cultural-programs">
+                            <div class="program-item">
+                                <div class="program-icon">
+                                    <i class="fas fa-music"></i>
+                                </div>
+                                <div class="program-details">
+                                    <h5>Traditional Music</h5>
+                                    <p>Tabla, Sitar, and traditional drums</p>
+                                </div>
+                            </div>
+                            
+                            <div class="program-item">
+                                <div class="program-icon">
+                                    <i class="fas fa-drum"></i>
+                                </div>
+                                <div class="program-details">
+                                    <h5>School Band</h5>
+                                    <p>Musical performances and competitions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="program-item">
+                                <div class="program-icon">
+                                    <i class="fas fa-theater-masks"></i>
+                                </div>
+                                <div class="program-details">
+                                    <h5>Traditional Dance</h5>
+                                    <p>Kandyan, Sabaragamuwa, and folk dances</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="achievements.html" class="btn btn-maroon">
+                            <i class="fas fa-trophy"></i>
+                            View Cultural Achievements
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="cultural-gallery">
+                        <div class="gallery-grid">
+                            <div class="gallery-item large">
+                                <img src="assets/images/student-life/traditional-dance.jpg" alt="Traditional Dance" class="img-fluid rounded">
+                                <div class="gallery-overlay">
+                                    <h5>Kandyan Dance Performance</h5>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="assets/images/student-life/music-ensemble.jpg" alt="Music Ensemble" class="img-fluid rounded">
+                                <div class="gallery-overlay">
+                                    <h5>Music Ensemble</h5>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="assets/images/student-life/drama-club.jpg" alt="Drama Performance" class="img-fluid rounded">
+                                <div class="gallery-overlay">
+                                    <h5>Drama Club</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Environmental Projects Section -->
+    <section class="environmental-projects py-5 bg-light" id="environmental">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <div class="section-badge">
+                    Green Initiatives
+                </div>
+                <h2 class="section-title">
+                    Environmental <span class="text-maroon">Projects</span>
+                </h2>
+                <p class="section-description">
+                    Building environmental consciousness through hands-on sustainability projects
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/student-life/school-garden.jpg" alt="School Garden" class="img-fluid">
+                            <div class="project-category">Gardening</div>
+                        </div>
+                        <div class="project-content">
+                            <h4>School Organic Garden</h4>
+                            <p>Students maintain an organic vegetable garden, learning about sustainable agriculture and healthy eating while providing fresh produce for the school community.</p>
+                            <div class="project-stats">
+                                <span class="stat"><i class="fas fa-seedling"></i> 15 Crop varieties</span>
+                                <span class="stat"><i class="fas fa-users"></i> 40 Students involved</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/student-life/tree-planting.jpg" alt="Tree Planting" class="img-fluid">
+                            <div class="project-category">Conservation</div>
+                        </div>
+                        <div class="project-content">
+                            <h4>Tree Planting Initiative</h4>
+                            <p>Annual tree planting drives help students understand the importance of forest conservation while contributing to environmental restoration in the local community.</p>
+                            <div class="project-stats">
+                                <span class="stat"><i class="fas fa-tree"></i> 200+ Trees planted</span>
+                                <span class="stat"><i class="fas fa-leaf"></i> 5 Native species</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/student-life/recycling-project.jpg" alt="Recycling Project" class="img-fluid">
+                            <div class="project-category">Recycling</div>
+                        </div>
+                        <div class="project-content">
+                            <h4>Waste Management Program</h4>
+                            <p>Comprehensive recycling and waste reduction program teaching students about circular economy principles and responsible consumption.</p>
+                            <div class="project-stats">
+                                <span class="stat"><i class="fas fa-recycle"></i> 80% Waste reduced</span>
+                                <span class="stat"><i class="fas fa-award"></i> Eco-School status</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Leadership Section -->
+    <section class="student-leadership py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <div class="section-badge">
+                    Leadership Development
+                </div>
+                <h2 class="section-title">
+                    Student <span class="text-maroon">Leadership</span>
+                </h2>
+                <p class="section-description">
+                    Empowering students to lead and make a positive impact in their school and community
+                </p>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="leadership-structure">
+                        <h3>Student Council Structure</h3>
+                        <p>Our democratic student council system provides opportunities for students to develop leadership skills and represent their peers in school decision-making processes.</p>
+                        
+                        <div class="council-positions">
+                            <div class="position-item">
+                                <div class="position-icon">
+                                    <i class="fas fa-crown"></i>
+                                </div>
+                                <div class="position-info">
+                                    <h5>Head Prefect</h5>
+                                    <p>Overall student leadership and school representation</p>
+                                </div>
+                            </div>
+                            
+                            <div class="position-item">
+                                <div class="position-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div class="position-info">
+                                    <h5>Subject Prefects</h5>
+                                    <p>Leading academic clubs and peer learning</p>
+                                </div>
+                            </div>
+                            
+                            <div class="position-item">
+                                <div class="position-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="position-info">
+                                    <h5>House Captains</h5>
+                                    <p>Inter-house competitions and team building</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="leadership-achievements">
+                        <div class="achievement-highlight">
+                            <img src="assets/images/student-life/student-council.jpg" alt="Student Council" class="img-fluid rounded">
+                            <div class="achievement-overlay">
+                                <div class="achievement-content">
+                                    <h4>Student-Led Initiatives</h4>
+                                    <ul>
+                                        <li>Peer tutoring programs</li>
+                                        <li>Community service projects</li>
+                                        <li>School improvement suggestions</li>
+                                        <li>Inter-school collaborations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="photo-gallery py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <div class="section-badge">
+                    Memories
+                </div>
+                <h2 class="section-title">
+                    Student Life <span class="text-maroon">Gallery</span>
+                </h2>
+                <p class="section-description">
+                    Capturing the vibrant moments of student life at Makalanegama School
+                </p>
+            </div>
+            
+            <div class="gallery-filters text-center mb-4" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All Activities</button>
+                <button class="filter-btn" data-filter="academic">Academic</button>
+                <button class="filter-btn" data-filter="sports">Sports</button>
+                <button class="filter-btn" data-filter="cultural">Cultural</button>
+                <button class="filter-btn" data-filter="environmental">Environmental</button>
+            </div>
+            
+            <div class="photo-gallery-grid" id="photo-gallery">
+                <div class="gallery-photo" data-category="academic" data-aos="fade-up">
+                    <img src="assets/images/gallery/science-experiment.jpg" alt="Science Experiment" class="img-fluid">
+                    <div class="photo-overlay">
+                        <div class="photo-content">
+                            <h5>School Ground</h5>
+                            <p>Prefect day</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-photo" data-category="sports" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/images/gallery/volleyball-match.jpg" alt="Volleyball Match" class="img-fluid">
+                    <div class="photo-overlay">
+                        <div class="photo-content">
+                            <h5>School Ground</h5>
+                            <p>Practicing</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-photo" data-category="cultural" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/images/gallery/cultural-performance.jpg" alt="Cultural Performance" class="img-fluid">
+                    <div class="photo-overlay">
+                        <div class="photo-content">
+                            <h5>School Ground</h5>
+                            <p>Night Camp</p>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up">
+                <button id="load-more-gallery" class="btn btn-outline-maroon btn-lg">
+                    <i class="fas fa-images"></i>
+                    View More Photos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Activities CTA Section -->
+    <section class="join-activities-cta py-5">
+        <div class="container">
+            <div class="cta-content text-center" data-aos="fade-up">
+                <h2>Ready to Join Our Vibrant Community?</h2>
+                <p>Discover your passion, develop your talents, and make lifelong friendships through our diverse range of activities and programs.</p>
+                
+                <div class="cta-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Active Students</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">Clubs & Activities</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Annual Events</div>
+                    </div>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="admissions.html" class="btn btn-maroon btn-lg">
+                        <i class="fas fa-user-plus"></i>
+                        Apply for Admission
+                    </a>
+                    <a href="contact.html" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-phone"></i>
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="footer-brand">
+                            <img src="assets/images/logo/logo-white.png" alt="Makalanegama School" class="footer-logo">
+                            <h4>Makalanegama School</h4>
+                            <p class="footer-tagline">Excellence in Education Since 1888</p>
+                            <p>Nurturing young minds with wisdom, virtue, and excellence in the heart of Galgamuwa, North Western Province.</p>
+                            
+                            <div class="social-links">
+                                <a href="https://web.facebook.com/people/Makalanegama-kv/100063734032649/" target="_blank" class="social-link">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-links">
+                            <h5>Quick Links</h5>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="teachers.html">Our Teachers</a></li>
+                                <li><a href="curriculum.html">Curriculum</a></li>
+                                <li><a href="student-life.html">Student Life</a></li>
+                                <li><a href="admissions.html">Admissions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-links">
+                            <h5>Information</h5>
+                            <ul>
+                                <li><a href="achievements.html">Achievements</a></li>
+                                <li><a href="events.html">Events</a></li>
+                                <li><a href="news.html">News</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="footer-contact">
+                            <h5>Contact Information</h5>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Address:</strong><br>
+                                    X8X5+VGH, Galgamuwa-Nikawewa Rd,<br>
+                                    Galgamuwa, North Western Province,<br>
+                                    Sri Lanka
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone:</strong><br>
+                                    <a href="tel:+94372053619">+94 37 205 3619</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email:</strong><br>
+                                    <a href="mailto:info@makalanegamaschool.lk">info@makalanegamaschool.lk</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>School Hours:</strong><br>
+                                    Monday - Friday: 7:30 AM - 1:30 PM
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>&copy; 2024 Makalanegama School. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p>Designed with ❤️ for educational excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Static website - no dynamic functionality needed
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Student Life page loaded successfully - static version');
+            
+            // Simple static functionality for gallery if needed
+            initializeStaticGallery();
+        });
+        
+        // Basic static gallery functionality
+        function initializeStaticGallery() {
+            // Simple lightbox for images
+            const galleryImages = document.querySelectorAll('.gallery-item img');
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    // Simple image preview - can be enhanced later
+                    const lightbox = document.createElement('div');
+                    lightbox.style.cssText = `
+                        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                        background: rgba(0,0,0,0.9); display: flex; align-items: center;
+                        justify-content: center; z-index: 9999; cursor: pointer;
+                    `;
+                    lightbox.innerHTML = `<img src="${this.src}" style="max-width: 90%; max-height: 90%; object-fit: contain;">`;
+                    document.body.appendChild(lightbox);
+                    
+                    lightbox.addEventListener('click', () => {
+                        document.body.removeChild(lightbox);
+                    });
+                });
+            });
+        }
+    </script>
+</body>
+</html>
